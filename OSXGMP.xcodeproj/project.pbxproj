@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271FAF191A179D2B003E3660 /* gmp-man-6.0.0a.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 271FAF181A179D2B003E3660 /* gmp-man-6.0.0a.pdf */; };
 		279A74541A16BED3008D8C51 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A74531A16BED3008D8C51 /* main.swift */; };
+		279A74651A16BF20008D8C51 /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A74601A16BF20008D8C51 /* BigInt.swift */; };
+		279A74661A16BF20008D8C51 /* BigIntError.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74621A16BF20008D8C51 /* BigIntError.m */; };
+		279A74671A16BF20008D8C51 /* BigIntObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74641A16BF20008D8C51 /* BigIntObjC.m */; };
+		279A74681A16BF31008D8C51 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 279A745D1A16BF12008D8C51 /* libgmp.a */; };
+		27F5E1A01A177959003DB35E /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 279A745D1A16BF12008D8C51 /* libgmp.a */; };
+		27F5E1A11A177965003DB35E /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A74601A16BF20008D8C51 /* BigInt.swift */; };
+		27F5E1A21A177968003DB35E /* BigIntError.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74621A16BF20008D8C51 /* BigIntError.m */; };
+		27F5E1A31A17796B003DB35E /* BigIntObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74641A16BF20008D8C51 /* BigIntObjC.m */; };
+		27F5E1A91A177C0C003DB35E /* BigIntSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F5E1A81A177C0C003DB35E /* BigIntSwiftTest.swift */; };
+		27F5E1AB1A177C9F003DB35E /* BigIntObjCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5E1AA1A177C9F003DB35E /* BigIntObjCTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +34,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		271FAF181A179D2B003E3660 /* gmp-man-6.0.0a.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "gmp-man-6.0.0a.pdf"; sourceTree = "<group>"; };
+		278DD3721A17E6B40092001A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		278DD3731A17E6BD0092001A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		279A74501A16BED3008D8C51 /* OSXGMP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSXGMP; sourceTree = BUILT_PRODUCTS_DIR; };
 		279A74531A16BED3008D8C51 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		279A745B1A16BF12008D8C51 /* gmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gmp.h; sourceTree = "<group>"; };
+		279A745C1A16BF12008D8C51 /* libgmp.10.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgmp.10.dylib; sourceTree = "<group>"; };
+		279A745D1A16BF12008D8C51 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
+		279A745E1A16BF12008D8C51 /* libgmp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgmp.dylib; sourceTree = "<group>"; };
+		279A74601A16BF20008D8C51 /* BigInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigInt.swift; sourceTree = "<group>"; };
+		279A74611A16BF20008D8C51 /* BigIntError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigIntError.h; sourceTree = "<group>"; };
+		279A74621A16BF20008D8C51 /* BigIntError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigIntError.m; sourceTree = "<group>"; };
+		279A74631A16BF20008D8C51 /* BigIntObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigIntObjC.h; sourceTree = "<group>"; };
+		279A74641A16BF20008D8C51 /* BigIntObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigIntObjC.m; sourceTree = "<group>"; };
+		279A74711A16C16F008D8C51 /* OSXGMP-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSXGMP-Bridging-Header.h"; sourceTree = "<group>"; };
+		279A74761A16C32A008D8C51 /* OSXGMPTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXGMPTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		279A74791A16C32A008D8C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27F5E1A81A177C0C003DB35E /* BigIntSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigIntSwiftTest.swift; sourceTree = "<group>"; };
+		27F5E1AA1A177C9F003DB35E /* BigIntObjCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigIntObjCTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +60,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279A74681A16BF31008D8C51 /* libgmp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		279A74731A16C32A008D8C51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F5E1A01A177959003DB35E /* libgmp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,8 +78,13 @@
 		279A74471A16BED3008D8C51 = {
 			isa = PBXGroup;
 			children = (
+				279A745F1A16BF20008D8C51 /* BigInt */,
+				279A745A1A16BF12008D8C51 /* GMP */,
 				279A74521A16BED3008D8C51 /* OSXGMP */,
+				279A74771A16C32A008D8C51 /* OSXGMPTest */,
 				279A74511A16BED3008D8C51 /* Products */,
+				278DD3731A17E6BD0092001A /* LICENSE */,
+				278DD3721A17E6B40092001A /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -50,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				279A74501A16BED3008D8C51 /* OSXGMP */,
+				279A74761A16C32A008D8C51 /* OSXGMPTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +101,51 @@
 			isa = PBXGroup;
 			children = (
 				279A74531A16BED3008D8C51 /* main.swift */,
+				279A74711A16C16F008D8C51 /* OSXGMP-Bridging-Header.h */,
 			);
 			path = OSXGMP;
+			sourceTree = "<group>";
+		};
+		279A745A1A16BF12008D8C51 /* GMP */ = {
+			isa = PBXGroup;
+			children = (
+				271FAF181A179D2B003E3660 /* gmp-man-6.0.0a.pdf */,
+				279A745B1A16BF12008D8C51 /* gmp.h */,
+				279A745C1A16BF12008D8C51 /* libgmp.10.dylib */,
+				279A745D1A16BF12008D8C51 /* libgmp.a */,
+				279A745E1A16BF12008D8C51 /* libgmp.dylib */,
+			);
+			path = GMP;
+			sourceTree = "<group>";
+		};
+		279A745F1A16BF20008D8C51 /* BigInt */ = {
+			isa = PBXGroup;
+			children = (
+				279A74601A16BF20008D8C51 /* BigInt.swift */,
+				279A74611A16BF20008D8C51 /* BigIntError.h */,
+				279A74621A16BF20008D8C51 /* BigIntError.m */,
+				279A74631A16BF20008D8C51 /* BigIntObjC.h */,
+				279A74641A16BF20008D8C51 /* BigIntObjC.m */,
+			);
+			path = BigInt;
+			sourceTree = "<group>";
+		};
+		279A74771A16C32A008D8C51 /* OSXGMPTest */ = {
+			isa = PBXGroup;
+			children = (
+				27F5E1AA1A177C9F003DB35E /* BigIntObjCTest.m */,
+				27F5E1A81A177C0C003DB35E /* BigIntSwiftTest.swift */,
+				279A74781A16C32A008D8C51 /* Supporting Files */,
+			);
+			path = OSXGMPTest;
+			sourceTree = "<group>";
+		};
+		279A74781A16C32A008D8C51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				279A74791A16C32A008D8C51 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +168,23 @@
 			productReference = 279A74501A16BED3008D8C51 /* OSXGMP */;
 			productType = "com.apple.product-type.tool";
 		};
+		279A74751A16C32A008D8C51 /* OSXGMPTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 279A747C1A16C32A008D8C51 /* Build configuration list for PBXNativeTarget "OSXGMPTest" */;
+			buildPhases = (
+				279A74721A16C32A008D8C51 /* Sources */,
+				279A74731A16C32A008D8C51 /* Frameworks */,
+				279A74741A16C32A008D8C51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OSXGMPTest;
+			productName = OSXGMPTest;
+			productReference = 279A74761A16C32A008D8C51 /* OSXGMPTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +195,9 @@
 				ORGANIZATIONNAME = "Otto van Verseveld";
 				TargetAttributes = {
 					279A744F1A16BED3008D8C51 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					279A74751A16C32A008D8C51 = {
 						CreatedOnToolsVersion = 6.1;
 					};
 				};
@@ -109,16 +215,43 @@
 			projectRoot = "";
 			targets = (
 				279A744F1A16BED3008D8C51 /* OSXGMP */,
+				279A74751A16C32A008D8C51 /* OSXGMPTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		279A74741A16C32A008D8C51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				271FAF191A179D2B003E3660 /* gmp-man-6.0.0a.pdf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		279A744C1A16BED3008D8C51 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279A74651A16BF20008D8C51 /* BigInt.swift in Sources */,
+				279A74661A16BF20008D8C51 /* BigIntError.m in Sources */,
+				279A74671A16BF20008D8C51 /* BigIntObjC.m in Sources */,
 				279A74541A16BED3008D8C51 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		279A74721A16C32A008D8C51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F5E1A11A177965003DB35E /* BigInt.swift in Sources */,
+				27F5E1AB1A177C9F003DB35E /* BigIntObjCTest.m in Sources */,
+				27F5E1A21A177968003DB35E /* BigIntError.m in Sources */,
+				27F5E1A31A17796B003DB35E /* BigIntObjC.m in Sources */,
+				27F5E1A91A177C0C003DB35E /* BigIntSwiftTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,14 +336,66 @@
 		279A74581A16BED3008D8C51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GMP",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		279A74591A16BED3008D8C51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GMP",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		279A747D1A16C32A008D8C51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OSXGMPTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GMP",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		279A747E1A16C32A008D8C51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OSXGMPTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GMP",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -233,6 +418,16 @@
 				279A74591A16BED3008D8C51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		279A747C1A16C32A008D8C51 /* Build configuration list for PBXNativeTarget "OSXGMPTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				279A747D1A16C32A008D8C51 /* Debug */,
+				279A747E1A16C32A008D8C51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
