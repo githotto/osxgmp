@@ -60,7 +60,6 @@ typedef unsigned long int GMP_ULONG;
 
 #pragma mark - GMP Paragraph 5.5 Arithmetic Functions
 - (void)abs;
-//- (BigIntObjC *)abs;
 + (BigIntObjC *)abs:(BigIntObjC *)op;
 
 - (void)add:(BigIntObjC *)op;

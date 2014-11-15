@@ -177,11 +177,6 @@
     mpz_abs(self->bigInt, self->bigInt);
 }
 
-//- (BigIntObjC *)abs {
-//    mpz_abs(self->bigInt, self->bigInt);
-//    return self;
-//}
-
 + (BigIntObjC *)abs:(BigIntObjC *)op {
     BigIntObjC *bn = [[BigIntObjC alloc] initWithBigInt:op];
     [bn abs];
