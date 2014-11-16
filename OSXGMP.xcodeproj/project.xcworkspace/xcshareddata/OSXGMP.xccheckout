@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4866413C-A959-4C15-B3EE-74FE3C9E898F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>OSXGMP</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0B5E6A2FAC3C8BB2D28C96B59613EF1F6478CD69</key>
+		<string>https://github.com/githotto/osxgmp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>OSXGMP.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0B5E6A2FAC3C8BB2D28C96B59613EF1F6478CD69</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/githotto/osxgmp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0B5E6A2FAC3C8BB2D28C96B59613EF1F6478CD69</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0B5E6A2FAC3C8BB2D28C96B59613EF1F6478CD69</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OSXGMP</string>
+		</dict>
+	</array>
+</dict>
+</plist>

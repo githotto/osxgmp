@@ -41,7 +41,6 @@ OSXGMP is made with Xcode 6.1 and contains:
 having two targets: the OSXGMP command line tool (Swift interface) and an OSXGMPTest
 target having test-classes for the Objective-C and Swift wrappers.
 
-
 Installation
 ============
 * Download the OSXGMP project on your computer.
@@ -102,3 +101,13 @@ contributors.<br>More info about me can be found at: http://nl.linkedin.com/in/o
 
 Thanks goes to Apple in providing Xcode's Objective-C and Swift tools and especially to
 all the people involved in building and maintaining the GNU GMP library (https://gmplib.org/devel/).
+
+License
+=======
+* The included GMP documentation (gmp-man-6.0.0a.pdf) falls under the terms of
+the 'GNU Free Documentation License'.
+* The GNU MP library is dual licensed under the conditions of the GNU Lesser General
+Public License version 3, or the GNU General Public License version 2. More on this on page 1
+of the gmp-man-6.0.0a.pdf document.
+* All the Objective-C and Swift code files are licensed under the terms of the
+GNU General Public License version 3 (see COPYINGv3), or any later version.

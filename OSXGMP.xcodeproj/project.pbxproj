@@ -13,6 +13,7 @@
 		279A74661A16BF20008D8C51 /* BigIntError.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74621A16BF20008D8C51 /* BigIntError.m */; };
 		279A74671A16BF20008D8C51 /* BigIntObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74641A16BF20008D8C51 /* BigIntObjC.m */; };
 		279A74681A16BF31008D8C51 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 279A745D1A16BF12008D8C51 /* libgmp.a */; };
+		27B50AE71A19489D00F3EC58 /* COPYINGv3 in Resources */ = {isa = PBXBuildFile; fileRef = 27B50AE61A19489D00F3EC58 /* COPYINGv3 */; };
 		27F5E1A01A177959003DB35E /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 279A745D1A16BF12008D8C51 /* libgmp.a */; };
 		27F5E1A11A177965003DB35E /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A74601A16BF20008D8C51 /* BigInt.swift */; };
 		27F5E1A21A177968003DB35E /* BigIntError.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74621A16BF20008D8C51 /* BigIntError.m */; };
@@ -51,6 +52,7 @@
 		279A74711A16C16F008D8C51 /* OSXGMP-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSXGMP-Bridging-Header.h"; sourceTree = "<group>"; };
 		279A74761A16C32A008D8C51 /* OSXGMPTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXGMPTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		279A74791A16C32A008D8C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27B50AE61A19489D00F3EC58 /* COPYINGv3 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYINGv3; sourceTree = "<group>"; };
 		27F5E1A81A177C0C003DB35E /* BigIntSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigIntSwiftTest.swift; sourceTree = "<group>"; };
 		27F5E1AA1A177C9F003DB35E /* BigIntObjCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigIntObjCTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				279A74521A16BED3008D8C51 /* OSXGMP */,
 				279A74771A16C32A008D8C51 /* OSXGMPTest */,
 				279A74511A16BED3008D8C51 /* Products */,
+				27B50AE61A19489D00F3EC58 /* COPYINGv3 */,
 				278DD3731A17E6BD0092001A /* LICENSE */,
 				278DD3721A17E6B40092001A /* README.md */,
 			);
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				271FAF191A179D2B003E3660 /* gmp-man-6.0.0a.pdf in Resources */,
+				27B50AE71A19489D00F3EC58 /* COPYINGv3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
