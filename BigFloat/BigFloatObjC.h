@@ -15,14 +15,29 @@
  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  BigFloatObjC.h
+//  BigNumber
+//
+//  Created by Otto van Verseveld on 10/26/14.
+//  Copyright (c) 2014 Otto van Verseveld. All rights reserved.
 //
 
-#import "BigFloatError.h"
-#import "BigFloatObjC.h"
+#import <Foundation/Foundation.h>
+#import <stdio.h>
+#import "gmp.h"
 
-#import "BigIntError.h"
-#import "BigIntObjC.h"
+@interface BigFloatObjC : NSObject {
+    mpf_t bigFloat;
+}
 
-#import "BigRationalError.h"
-#import "BigRationalObjC.h"
+
+#pragma mark - Initialization / removal
+- (void)dealloc;
+
+
+#pragma mark - GMP Paragraph 7.1 Initialization Functions
+- (id)init;
+- (void)clear;
+
+
+@end

@@ -15,14 +15,34 @@
  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  BigRationalObjC.m
+//  BigNumber
+//
+//  Created by Otto van Verseveld on 10/26/14.
+//  Copyright (c) 2014 Otto van Verseveld. All rights reserved.
 //
 
-#import "BigFloatError.h"
-#import "BigFloatObjC.h"
-
-#import "BigIntError.h"
-#import "BigIntObjC.h"
-
-#import "BigRationalError.h"
 #import "BigRationalObjC.h"
+
+@implementation BigRationalObjC
+
+
+#pragma mark - Initialization / removal
+- (void)dealloc {
+//    NSLog(@"Calling dealloc and mpq_clear ...");
+    mpq_clear(bigRational);
+}
+
+
+#pragma mark - GMP Paragraph 6.1 Initialization and Assignment Functions
+- (id)init {
+    self = [super init];
+    mpq_init(bigRational);
+    return self;
+}
+
+- (void)clear {
+    mpq_clear(bigRational);
+}
+
+@end

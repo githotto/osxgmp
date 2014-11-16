@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		271FAF191A179D2B003E3660 /* gmp-man-6.0.0a.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 271FAF181A179D2B003E3660 /* gmp-man-6.0.0a.pdf */; };
+		274854591A195BC000CA9364 /* BigFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274854541A195BC000CA9364 /* BigFloat.swift */; };
+		2748545A1A195BC000CA9364 /* BigFloatError.m in Sources */ = {isa = PBXBuildFile; fileRef = 274854561A195BC000CA9364 /* BigFloatError.m */; };
+		2748545B1A195BC000CA9364 /* BigFloatObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 274854581A195BC000CA9364 /* BigFloatObjC.m */; };
+		274854621A195D3F00CA9364 /* BigRational.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2748545D1A195D3F00CA9364 /* BigRational.swift */; };
+		274854631A195D3F00CA9364 /* BigRationalError.m in Sources */ = {isa = PBXBuildFile; fileRef = 2748545F1A195D3F00CA9364 /* BigRationalError.m */; };
+		274854641A195D3F00CA9364 /* BigRationalObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 274854611A195D3F00CA9364 /* BigRationalObjC.m */; };
+		274854661A195E1800CA9364 /* BigFloatObjCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 274854651A195E1800CA9364 /* BigFloatObjCTest.m */; };
+		274854681A195E6B00CA9364 /* BigFloatSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274854671A195E6B00CA9364 /* BigFloatSwiftTest.swift */; };
+		2748546A1A195E9100CA9364 /* BigRationalObjCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 274854691A195E9100CA9364 /* BigRationalObjCTest.m */; };
+		2748546E1A195F2E00CA9364 /* BigRationalSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2748546D1A195F2E00CA9364 /* BigRationalSwiftTest.swift */; };
 		279A74541A16BED3008D8C51 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A74531A16BED3008D8C51 /* main.swift */; };
 		279A74651A16BF20008D8C51 /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A74601A16BF20008D8C51 /* BigInt.swift */; };
 		279A74661A16BF20008D8C51 /* BigIntError.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74621A16BF20008D8C51 /* BigIntError.m */; };
@@ -36,6 +46,20 @@
 
 /* Begin PBXFileReference section */
 		271FAF181A179D2B003E3660 /* gmp-man-6.0.0a.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "gmp-man-6.0.0a.pdf"; sourceTree = "<group>"; };
+		274854541A195BC000CA9364 /* BigFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigFloat.swift; sourceTree = "<group>"; };
+		274854551A195BC000CA9364 /* BigFloatError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigFloatError.h; sourceTree = "<group>"; };
+		274854561A195BC000CA9364 /* BigFloatError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigFloatError.m; sourceTree = "<group>"; };
+		274854571A195BC000CA9364 /* BigFloatObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigFloatObjC.h; sourceTree = "<group>"; };
+		274854581A195BC000CA9364 /* BigFloatObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigFloatObjC.m; sourceTree = "<group>"; };
+		2748545D1A195D3F00CA9364 /* BigRational.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigRational.swift; sourceTree = "<group>"; };
+		2748545E1A195D3F00CA9364 /* BigRationalError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigRationalError.h; sourceTree = "<group>"; };
+		2748545F1A195D3F00CA9364 /* BigRationalError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigRationalError.m; sourceTree = "<group>"; };
+		274854601A195D3F00CA9364 /* BigRationalObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigRationalObjC.h; sourceTree = "<group>"; };
+		274854611A195D3F00CA9364 /* BigRationalObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigRationalObjC.m; sourceTree = "<group>"; };
+		274854651A195E1800CA9364 /* BigFloatObjCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigFloatObjCTest.m; sourceTree = "<group>"; };
+		274854671A195E6B00CA9364 /* BigFloatSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigFloatSwiftTest.swift; sourceTree = "<group>"; };
+		274854691A195E9100CA9364 /* BigRationalObjCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigRationalObjCTest.m; sourceTree = "<group>"; };
+		2748546D1A195F2E00CA9364 /* BigRationalSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigRationalSwiftTest.swift; sourceTree = "<group>"; };
 		278DD3721A17E6B40092001A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		278DD3731A17E6BD0092001A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		279A74501A16BED3008D8C51 /* OSXGMP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSXGMP; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,10 +101,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		274854531A195BC000CA9364 /* BigFloat */ = {
+			isa = PBXGroup;
+			children = (
+				274854541A195BC000CA9364 /* BigFloat.swift */,
+				274854551A195BC000CA9364 /* BigFloatError.h */,
+				274854561A195BC000CA9364 /* BigFloatError.m */,
+				274854571A195BC000CA9364 /* BigFloatObjC.h */,
+				274854581A195BC000CA9364 /* BigFloatObjC.m */,
+			);
+			path = BigFloat;
+			sourceTree = "<group>";
+		};
+		2748545C1A195D3F00CA9364 /* BigRational */ = {
+			isa = PBXGroup;
+			children = (
+				2748545D1A195D3F00CA9364 /* BigRational.swift */,
+				2748545E1A195D3F00CA9364 /* BigRationalError.h */,
+				2748545F1A195D3F00CA9364 /* BigRationalError.m */,
+				274854601A195D3F00CA9364 /* BigRationalObjC.h */,
+				274854611A195D3F00CA9364 /* BigRationalObjC.m */,
+			);
+			path = BigRational;
+			sourceTree = "<group>";
+		};
 		279A74471A16BED3008D8C51 = {
 			isa = PBXGroup;
 			children = (
+				274854531A195BC000CA9364 /* BigFloat */,
 				279A745F1A16BF20008D8C51 /* BigInt */,
+				2748545C1A195D3F00CA9364 /* BigRational */,
 				279A745A1A16BF12008D8C51 /* GMP */,
 				279A74521A16BED3008D8C51 /* OSXGMP */,
 				279A74771A16C32A008D8C51 /* OSXGMPTest */,
@@ -136,8 +186,12 @@
 		279A74771A16C32A008D8C51 /* OSXGMPTest */ = {
 			isa = PBXGroup;
 			children = (
+				274854651A195E1800CA9364 /* BigFloatObjCTest.m */,
+				274854671A195E6B00CA9364 /* BigFloatSwiftTest.swift */,
 				27F5E1AA1A177C9F003DB35E /* BigIntObjCTest.m */,
 				27F5E1A81A177C0C003DB35E /* BigIntSwiftTest.swift */,
+				274854691A195E9100CA9364 /* BigRationalObjCTest.m */,
+				2748546D1A195F2E00CA9364 /* BigRationalSwiftTest.swift */,
 				279A74781A16C32A008D8C51 /* Supporting Files */,
 			);
 			path = OSXGMPTest;
@@ -251,11 +305,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2748546E1A195F2E00CA9364 /* BigRationalSwiftTest.swift in Sources */,
 				27F5E1A11A177965003DB35E /* BigInt.swift in Sources */,
 				27F5E1AB1A177C9F003DB35E /* BigIntObjCTest.m in Sources */,
+				274854641A195D3F00CA9364 /* BigRationalObjC.m in Sources */,
 				27F5E1A21A177968003DB35E /* BigIntError.m in Sources */,
+				2748545A1A195BC000CA9364 /* BigFloatError.m in Sources */,
+				274854591A195BC000CA9364 /* BigFloat.swift in Sources */,
+				274854631A195D3F00CA9364 /* BigRationalError.m in Sources */,
+				274854661A195E1800CA9364 /* BigFloatObjCTest.m in Sources */,
+				274854621A195D3F00CA9364 /* BigRational.swift in Sources */,
+				274854681A195E6B00CA9364 /* BigFloatSwiftTest.swift in Sources */,
+				2748546A1A195E9100CA9364 /* BigRationalObjCTest.m in Sources */,
 				27F5E1A31A17796B003DB35E /* BigIntObjC.m in Sources */,
 				27F5E1A91A177C0C003DB35E /* BigIntSwiftTest.swift in Sources */,
+				2748545B1A195BC000CA9364 /* BigFloatObjC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
