@@ -404,6 +404,7 @@
 		279A74581A16BED3008D8C51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LD_NO_PIE = YES;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GMP",
@@ -416,6 +417,7 @@
 		279A74591A16BED3008D8C51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LD_NO_PIE = YES;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GMP",
@@ -438,6 +440,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = OSXGMPTest/Info.plist;
+				LD_NO_PIE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,6 +460,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = OSXGMPTest/Info.plist;
+				LD_NO_PIE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

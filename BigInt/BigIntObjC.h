@@ -169,6 +169,14 @@ typedef unsigned long int GMP_ULONG;
 + (BigIntObjC *)sqrt:(BigIntObjC *)op;
 
 
+#pragma mark - GMP Paragraph 5.9 Number Theoretic Functions
++ (BigIntObjC *)factorial:(unsigned long int)n;
++ (bool)isPrimeNr:(unsigned long int)n;
+- (bool)isPrime;
+- (BigIntObjC *)nextPrime;
+- (void)setNextPrime;
+
+
 #pragma mark - GMP Paragraph 5.10 Comparison Functions
 - (int)compare:(BigIntObjC *)bn;
 - (int)compareWithSLong:(GMP_SLONG)slongNr;

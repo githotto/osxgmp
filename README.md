@@ -110,4 +110,5 @@ the 'GNU Free Documentation License'.
 Public License version 3, or the GNU General Public License version 2. More on this on page 1
 of the gmp-man-6.0.0a.pdf document.
 * All the Objective-C and Swift code files are licensed under the terms of the
-GNU General Public License version 3 (see COPYINGv3), or any later version.
+GNU Lesser General Public License version 3 (see COPYINGv3), or any later version.
+* Note: If you are using any code of this project in an app submitted to the AppStore, I would love to hear it such that I can make a list of references to Apps benefitting from my work. Thanks in advance!

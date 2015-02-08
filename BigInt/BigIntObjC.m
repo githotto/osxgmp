@@ -603,4 +603,39 @@
     [BigIntObjC swap:bnRev bn2:self];
 }
 
+
+#pragma mark - GMP Paragraph 5.9 Number Theoretic Functions
++ (BigIntObjC *)factorial:(unsigned long int)n {
+    BigIntObjC *bnFac = [self new];
+    mpz_fac_ui(bnFac->bigInt, n);
+    return bnFac;
+}
+
++ (bool)isPrimeNr:(unsigned long int)n {
+    BigIntObjC *bn = [BigIntObjC new];
+    [bn setFromULong:n];
+    bool isPrime = [bn isPrime];
+    [bn clear];
+    return isPrime;
+}
+
+- (bool)isPrime {
+    int probablePrime = mpz_probab_prime_p(bigInt, 25);
+    //    bool isAPrime = (probablePrime != 0);
+    //    gmp_printf("isPrime(%Zd) => %s (%d)\n", bigInt, isAPrime ? "yes" : "no", probablePrime);
+    return (probablePrime != 0);
+}
+
+- (BigIntObjC *)nextPrime {
+    BigIntObjC *bn = [BigIntObjC new];
+    mpz_nextprime(bn->bigInt, bigInt);
+    return bn;
+}
+
+- (void)setNextPrime {
+    BigIntObjC *np = [self nextPrime];
+    [BigIntObjC swap:np bn2:self];
+    //    [np clear];
+}
+
 @end
