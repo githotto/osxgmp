@@ -24,6 +24,12 @@ along with OSXGMP.  If not, see <http://www.gnu.org/licenses/>.
 
 import Foundation
 
+enum BigIntError: ErrorType {
+    case EmptyStringNumber
+    case InvalidBaseNumber
+    case InvalidNumberFormat
+}
+
 public class BigInt : BigIntObjC {
     deinit {
 //        println("calling deinit of \(self)")
@@ -36,22 +42,56 @@ public class BigInt : BigIntObjC {
     init(nr: BigIntObjC) {
         super.init(bigInt: nr)
     }
-    init(nr: Double) {
-        super.init(double: nr)
+    init(doubleNr: Double) {
+        super.init(double: doubleNr)
     }
-    init(nr: Int) {
-        super.init(SLong: nr)
+    init(intNr: Int) {
+        super.init(SLong: intNr)
     }
-    init(nr: UInt) {
-        super.init(ULong: nr)
+    init(uintNr: UInt) {
+        super.init(ULong: uintNr)
     }
-    init(nr: String, error: NSErrorPointer) {
-        super.init(string: nr, inBase: 10, error: error)
+    private init(nr: String, base: Int32) throws {
+        super.init();
+//        do {
+            try self.setStringAndBase(nr, base: base)
+//        } catch BigIntError.BIE_EmptyStringNumber {
+//            print("FailureReason: The String-number should not be empty or zero-sized.")
+//            print("RecoverySuggestion: Make sure that the string contains at least one digit.")
+//        } catch BigIntError.BIE_InvalidBaseNumber {
+//            print("FailureReason: The base-number is invalid.")
+//            print("RecoverySuggestion: Make sure the base-number is 0 or between 2 and 62.")
+//        } catch BigIntError.BIE_InvalidNumberFormat {
+//            print("FailureReason: The string-number is not a valid number-format for the current base.")
+//            print("RecoverySuggestion: heck that the number contains ONLY digits {0,..,9} for base <= 10 or 'digits' {A,..,Z,a,..,z} for 10 < base < 63.")
+//        }
+//        defer {
+//            print("This is the finally option")
+//        }
     }
-    init(nr: String, base: Int32, error: NSErrorPointer) {
-        super.init(string: nr, inBase: base, error: error)
+    convenience init(stringNr: String, error: NSErrorPointer) throws {
+        try self.init(nr: stringNr, base: 10)
     }
-    
+    convenience init(stringNr: String) throws {
+        try self.init(nr: stringNr, base: 10)
+    }
+    convenience init(stringNr: String, base: Int32) throws {
+        try self.init(nr: stringNr, base: base)
+    }
+    private func setStringAndBase(stringNr: String, base: Int32) throws {
+        guard ((base == 0) || ((base > 1) && (base < 63))) else {
+            throw BigIntError.InvalidBaseNumber
+        }
+        guard stringNr.characters.count > 0 else {
+            throw BigIntError.EmptyStringNumber
+        }
+        var err : NSError?
+        let mpzSetStr = super.setFromString(stringNr, withBase: base, error: &err)
+        guard !((mpzSetStr == -1) && (stringNr.characters.count > 0)) else {
+            throw BigIntError.InvalidNumberFormat
+        }
+    }
+
     //- GMP Paragraph 5.3 Combined Initialization and Assignment Functions.
     //=> see 5.1 above!
     
@@ -163,10 +203,10 @@ func / (lhs: BigInt, rhs: UInt) -> BigInt {
     return BigInt(nr: BigIntObjC.divULong(lhs, d: rhs))
 }
 func / (lhs: Int, rhs: BigInt) -> BigInt {
-    return BigInt(nr: BigIntObjC.div(BigInt(nr: lhs), d: rhs))
+    return BigInt(nr: BigIntObjC.div(BigInt(intNr: lhs), d: rhs))
 }
 func / (lhs: UInt, rhs: BigInt) -> BigInt {
-    return BigInt(nr: BigIntObjC.div(BigInt(nr: lhs), d: rhs))
+    return BigInt(nr: BigIntObjC.div(BigInt(uintNr: lhs), d: rhs))
 }
 //MARK: ==-- (BIOP_12) Remainder:
 infix operator % { associativity left precedence 150 }
@@ -174,16 +214,16 @@ func % (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mod(lhs, d: rhs))
 }
 func % (lhs: BigInt, rhs: Int) -> BigInt {
-    return BigInt(nr: BigIntObjC.mod(lhs, d: BigInt(nr: rhs)))
+    return BigInt(nr: BigIntObjC.mod(lhs, d: BigInt(intNr: rhs)))
 }
 func % (lhs: BigInt, rhs: UInt) -> BigInt {
-    return BigInt(nr: BigIntObjC.mod(lhs, d: BigInt(nr: rhs)))
+    return BigInt(nr: BigIntObjC.mod(lhs, d: BigInt(uintNr: rhs)))
 }
 func % (lhs: Int, rhs: BigInt) -> BigInt {
-    return BigInt(nr: BigIntObjC.mod(BigInt(nr: lhs), d: rhs))
+    return BigInt(nr: BigIntObjC.mod(BigInt(intNr: lhs), d: rhs))
 }
 func % (lhs: UInt, rhs: BigInt) -> BigInt {
-    return BigInt(nr: BigIntObjC.mod(BigInt(nr: lhs), d: rhs))
+    return BigInt(nr: BigIntObjC.mod(BigInt(uintNr: lhs), d: rhs))
 }
 //- (BIOP_13) Multiply, ignoring overflow: infix operator &* { associativity left precedence 150 }
 //- (BIOP_14) Divide, ignoring overflow: infix operator &/ { associativity left precedence 150 }
@@ -220,12 +260,12 @@ func - (lhs: BigInt, rhs: UInt) -> BigInt {
     return BigInt(nr: BigIntObjC.subULong(lhs, op2: rhs))
 }
 func - (lhs: Int, rhs: BigInt) -> BigInt {
-    var res = BigInt(nr: BigIntObjC.subSLong(rhs, op2: lhs))
+    let res = BigInt(nr: BigIntObjC.subSLong(rhs, op2: lhs))
     res.neg()
     return res
 }
 func - (lhs: UInt, rhs: BigInt) -> BigInt {
-    var res = BigInt(nr: BigIntObjC.subULong(rhs, op2: lhs))
+    let res = BigInt(nr: BigIntObjC.subULong(rhs, op2: lhs))
     res.neg()
     return res
 }

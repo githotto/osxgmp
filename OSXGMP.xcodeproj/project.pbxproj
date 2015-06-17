@@ -248,7 +248,8 @@
 		279A74481A16BED3008D8C51 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Otto van Verseveld";
 				TargetAttributes = {
 					279A744F1A16BED3008D8C51 = {
@@ -345,6 +346,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -446,6 +448,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GMP",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.tofh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
 			};
@@ -466,6 +469,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GMP",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.tofh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
 			};

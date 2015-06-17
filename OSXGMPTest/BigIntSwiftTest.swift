@@ -46,74 +46,89 @@ class BigIntSwiftTest: XCTestCase {
         XCTAssert(result, "Init() should set value to 0!")
         
         // Test default string-initializer.
-        var err : NSError?
-        bi = BigInt(nr: "", error: &err)
-        //- Get returned error-code.
-        var errCode = err?.code
-        //- Get expected error-code. Note: add (Int)-cast since value is UInt32.
-        var expCode = (Int)(BIEC_EmptyStringNumber.value)
-        //- Check if we've an error, the appropriate code and initalized value.
-        result = (err != nil) && (errCode! == expCode) && (bi.toString() == "0")
-        //        println("X. result=\(result), errCode=\(errCode!), expCode=\(expCode)")
+        result = false
+        do {
+            bi = try BigInt(stringNr: "")
+        } catch BigIntError.EmptyStringNumber {
+            result = (bi.toString() == "0")
+        } catch _ {
+        }
         XCTAssert(result, "Init(String) should fail with errCode=EmptyStringNumber and have default value of 0!")
         
         // Test for error in string-initializer with invalid base-number.
-        bi = BigInt(nr: "101", base: 63, error: &err)
-        errCode = err?.code
-        expCode = (Int)(BIEC_InvalidBaseNumber.value)
-        result = (err != nil) && (errCode! == expCode)
+        result = false
+        do {
+            bi = try BigInt(stringNr: "101", base: 63)
+        } catch BigIntError.InvalidBaseNumber {
+            result = (bi.toString() == "0")
+        } catch _ {
+        }
         XCTAssert(result, "Init(String,base) should fail with errCode=InvalidBaseNumber and have default value of 0!")
-        
+
         // Test for error in string-initializer with invalid number for base.
-        bi = BigInt(nr: "12", base: 2, error: &err)
-        errCode = err?.code
-        expCode = (Int)(BIEC_InvalidNumberFormat.value)
-        result = (err != nil) && (errCode! == expCode) && (bi.toString() == "0")
+        result = false
+        do {
+            bi = try BigInt(stringNr: "12", base: 2)
+        } catch BigIntError.InvalidNumberFormat {
+            result = (bi.toString() == "0")
+        } catch _ {
+        }
         XCTAssert(result, "Init(String,base) should fail with errCode=InvalidNumberFormat and have default value of 0!")
-        
+
         // Test for no-error in string-initializer with valid number for base.
-        bi = BigInt(nr: "12", base: 3, error: &err)
-        result = (err == nil)
-        XCTAssert(result, "Init(String,base) should NOT fail with: err=\(err?.code)")
+        do {
+            bi = try BigInt(stringNr: "12", base: 3)
+        } catch _ {
+            XCTFail("Init(String,base) should NOT fail!")
+        }
     }
     
     //MARK: - GMP 5.2 Assignment Functions -------------------------------------
     func test05_02_Assignment() {
         // Test string-initializer with invalid number for base.
-        var err : NSError?
-        var bi = BigInt(nr: "12", base: 2, error: &err)
-        var result = (bi.toString() == "0")
+        var result = false
+        var bi = BigInt()
+        do {
+            bi = try BigInt(stringNr: "12", base: 2)
+        } catch _ {
+            result = (bi.toString() == "0")
+        }
         XCTAssert(result, "BigInt should be initialized to default value: 0")
-        
+
         // Test string-initializer with valid number for base.
-        bi = BigInt(nr: "12", base: 3, error: &err)
-        result = (bi.toString() == "5")
-        XCTAssert(result, "BigInt should be initialized to value: 5")
-        
+        do {
+            bi = try BigInt(stringNr: "12", base: 3)
+        } catch _ {
+        }
+        XCTAssert((bi.toString() == "5"), "BigInt should be initialized to value: 5")
+
         // Test value of large number string-initializer.
-        bi = BigInt(nr: "1234567890987654321", error: &err)
+        do {
+            bi = try BigInt(stringNr: "1234567890987654321")
+        } catch _ {
+        }
         result = (bi.toString() == "1234567890987654321")
         XCTAssert(result, "BigInt should be initialized to value: 1234567890987654321")
-        
+
         // Test swapping two variables using instance and method.
-        bi = BigInt(nr: 11)
-        var biSwap = BigInt(nr: 2222)
+        bi = BigInt(intNr: 11)
+        let biSwap = BigInt(intNr: 2222)
         bi.swap(biSwap)
         result = ((bi.toString() == "2222") && (biSwap.toString() == "11"))
         XCTAssert(result, "Swapping bi,biSwap should result in '2222' and '11' !")
-        
+
         // Test swapping two variables using Class method.
         BigInt.swap(bi, bn2: biSwap)
         result = ((bi.toString() == "11") && (biSwap.toString() == "2222"))
         XCTAssert(result, "Swapping bi,biSwap should result in '11' and '2222' !")
     }
-    
+
     func test05_02_Assignment_Operators() {
-        var bi1 = BigInt(nr: 11110000)
-        var bi2 = BigInt(nr: 00002200)
-        var nrLong : Int = -2
-        var nrULong : UInt = 24
-        
+        var bi1 = BigInt(intNr: 11110000)
+        let bi2 = BigInt(intNr: 00002200)
+        let nrLong : Int = -2
+        let nrULong : UInt = 24
+
         // Test += (BIOP_41) operator with:
         //-- type BigInt
         bi1 += bi2
@@ -131,76 +146,70 @@ class BigIntSwiftTest: XCTestCase {
         //TODO: should test assignment operators: /= (BIOP_42) ... ||= (BIOP_53)
         //...
     }
-    
+
     //MARK: - GMP 5.3 Combined Initialization and Assignment Functions ---------
     func test05_03_CombinedInitializationAndAssignment() {
         // Test initializer-BigInt.
-        var bi = BigInt(nr: BigInt(nr: 2))
+        var bi = BigInt(nr: BigInt(intNr: 2))
         var result = (bi.toString() == "2")
         XCTAssert(result, "Overloaded Initializer-BigInt should be 2!")
         
         // Test initializer-Double.
-        bi = BigInt(nr: 2.9)
+        bi = BigInt(doubleNr: 2.9)
         result = (bi.toString() == "2")
         XCTAssert(result, "Overloaded Initializer-Double(2.9) should truncate to 2!")
-        bi = BigInt(nr: 3.0)
+        bi = BigInt(doubleNr: 3.0)
         result = (bi.toString() == "3")
         XCTAssert(result, "Overloaded Initializer-Double(3.0) should be equal to 3!")
-        bi = BigInt(nr: 3.1)
+        bi = BigInt(doubleNr: 3.1)
         result = (bi.toString() == "3")
         XCTAssert(result, "Overloaded Initializer-Double(3.1) should truncate to 3!")
     }
-    
+
     //MARK: - GMP 5.4 Conversion Functions -------------------------------------
     func test05_04_Conversion() {
-        var err : NSError?
-        var bi = BigInt(nr: "9", error: &err) // NOTE: uses default base=10 here.
-        
+        let bi = try! BigInt(stringNr: "9")
         // NOTE1: No check needed since Swift automatically assigns the correct type.
-        var biDouble = bi.toDouble()
-        var biLong = bi.toSLong()    // Long 'translates' to Swifts Int type.
-        var biULong = bi.toULong()  // ULong 'translates' to Swifts UInt type.
+//        let biDouble = bi.toDouble()
+//        let biLong = bi.toSLong()    // Long 'translates' to Swifts Int type.
+//        let biULong = bi.toULong()  // ULong 'translates' to Swifts UInt type.
         // TODO: Should we test for over/under-flow here?!
         
         // Test conversion to base 10 (=default one).
-        var biString = bi.toString()
-        var result = (biString == "9")
-        XCTAssert(result, "BigInt.toString() should equal 9 for base=10 !")
+        XCTAssert((bi.toString() == "9"), "BigInt.toString() should equal 9 for base=10 !")
         
         // Test conversion to base 2.
-        biString = bi.toStringInBase(2)
-        result = (biString == "1001")
-        XCTAssert(result, "BigInt.toString(2) should equal 1001 for base=2 !")
+        XCTAssert((bi.toStringInBase(2) == "1001"), "BigInt.toString(2) should equal 1001 for base=2 !")
     }
-    
+
     //MARK: - GMP 5.5 Arithmetic Functions -------------------------------------
     func test05_05_Arithmetic_Add() {
-        var bi1 = BigInt(nr: 222_000_000)
-        var bi2 = BigInt(nr: 000_111_000)
-        var nrLong : Int = -111_000_000
-        var nrULong : UInt = 111_000
+        let bi1 = BigInt(intNr: 222_000_000)
+        let bi2 = BigInt(intNr: 000_111_000)
+        let nrLong : Int = -111_000_000
+        let nrULong : UInt = 111_000
         
         // Testing add for the GMP functions:
         //-- mpz_add
-        var bi3 = BigInt.add(bi1, op2: bi2)
+        let bi3 = BigInt.add(bi1, op2: bi2)
         var result = (bi3.toString() == "222111000")
-        //        println("X. bi3=\(bi3.toString()), result=\(result)")
         XCTAssert(result, "Add(bi1,bi2) should equal 222111000.")
         //-- mpz_add_ui
-        bi3.addULong(111_000)
+        bi3.addULong(nrULong)
         result = (bi3.toString() == "222222000")
         XCTAssert(result, "Add(bi1,ULong) should equal 222222000.")
         //-- mpz_add_si. NOTE: not in GMP, but added for convenience.
-        bi3.addSLong(-11_000)
-        result = (bi3.toString() == "222211000")
-        XCTAssert(result, "Add(bi1,Long) should equal 222211000.")
+        bi3.addSLong(nrLong)
+        result = (bi3.toString() == "111222000")
+        print("\(bi3.toString())")
+        XCTAssert(result, "Add(bi1,Long) should equal 111222000.")
     }
-    
+
     func test05_05_Arithmetic_Add_Operators() {
-        var bi1 = BigInt(nr: 222_000_000)
-        var bi2 = BigInt(nr: 000_111_000)
-        var nrLong : Int = -111_000_000
-        var nrULong : UInt = 111_000
+        let bi1 = BigInt(intNr: 222_000_000)
+        let bi2 = BigInt(intNr: 000_111_000)
+        let nrLong : Int = -111_000_000
+        let nrULong : UInt = 111_000
         
         // Test + (BIOP_17) operator with:
         //-- type BigInt and BigInt
@@ -231,16 +240,16 @@ class BigIntSwiftTest: XCTestCase {
 //        var maxLong = bi3.toLong() //NOTE: should result in an overflow!
 //        println("X. bi3=\(bi3.toString()), result=\(result), maxLong=\(maxLong)")
     }
-    
+
     func test05_05_Arithmetic_Substract() {
-        var bi1 = BigInt(nr: 222_000_000)
-        var bi2 = BigInt(nr: 000_111_000)
-        var nrLong : Int = -111_000_000
-        var nrULong : UInt = 111_000
+        let bi1 = BigInt(intNr: 222_000_000)
+        let bi2 = BigInt(intNr: 000_111_000)
+        let nrLong : Int = -111_000_000
+        let nrULong : UInt = 111_000
         
         // Testing substract for the GMP functions:
         //-- mpz_sub
-        var bi3 = BigInt.sub(bi1, op2: bi2)
+        let bi3 = BigInt.sub(bi1, op2: bi2)
         var result = (bi3.toString() == "221889000")
         XCTAssert(result, "Sub(bi1,bi2) should equal 221889000.")
         //-- mpz_sub_ui
@@ -253,12 +262,12 @@ class BigIntSwiftTest: XCTestCase {
         XCTAssert(result, "Sub(bi3,ULong) should equal 332778000.")
         //-- mpz_ui_sub is NOT implemented/tested!
     }
-    
+
     func test05_05_Arithmetic_Substract_Operators() {
-        var bi1 = BigInt(nr: 222_000_000)
-        var bi2 = BigInt(nr: 000_111_000)
-        var nrLong : Int = -111_000_000
-        var nrULong : UInt = 111_000
+        let bi1 = BigInt(intNr: 222_000_000)
+        let bi2 = BigInt(intNr: 000_111_000)
+        let nrLong : Int = -111_000_000
+        let nrULong : UInt = 111_000
         
         // Test - (BIOP_18) operator with:
         //-- type BigInt and BigInt
@@ -282,12 +291,12 @@ class BigIntSwiftTest: XCTestCase {
         result = (bi3.toString() == "-221889000")
         XCTAssert(result, "Long - bi1 should equal -221889000.")
     }
-    
+
     func test05_05_Arithmetic_Multiply() {
-        var bi1 = BigInt(nr: 111_000)
-        var bi2 = BigInt(nr: 000_222)
-        var nrLong : Int = -333_000
-        var nrULong : UInt = 000_444
+        let bi1 = BigInt(intNr: 111_000)
+        let bi2 = BigInt(intNr: 000_222)
+        let nrLong : Int = -333_000
+        let nrULong : UInt = 000_444
         
         // Testing multiply for the GMP functions:
         //-- mpz_mul (with type BigInt and BigInt)
@@ -305,7 +314,7 @@ class BigIntSwiftTest: XCTestCase {
         
         // Testing GMP functions:
         //-- mpz_addmul (with type BigInt and BigInt)
-        bi3 = BigInt(nr: 000_333)
+        bi3 = BigInt(intNr: 000_333)
         bi3.addMul(bi1, op2: bi2)
         result = (bi3.toString() == "24642333")
         XCTAssert(result, "addMul(bi1,bi2) should equal 24642333.")
@@ -323,7 +332,7 @@ class BigIntSwiftTest: XCTestCase {
         XCTAssert(result, "addMulULong(bi1,nrULong) should equal 333.")
         //-- mpz_mul_2exp with instance method:
         bi3 = BigInt(nr: bi2)
-        var expULong: UInt = 22
+        let expULong: UInt = 22
         bi3.mul2Exp(expULong)   //= 222 * 2^22
         result = (bi3.toString() == "931135488")
         XCTAssert(result, "Mul2Exp(222,22) should equal 931135488.")
@@ -332,12 +341,12 @@ class BigIntSwiftTest: XCTestCase {
         result = (bi3.toString() == "227328000")
         XCTAssert(result, "Mul2Exp(222,22) should equal 227328000.")
     }
-    
+
     func test05_05_Arithmetic_Multiply_Operators() {
-        var bi1 = BigInt(nr: 111_000)
-        var bi2 = BigInt(nr: 000_222)
-        var nrLong : Int = -333_000
-        var nrULong : UInt = 000_444
+        let bi1 = BigInt(intNr: 111_000)
+        let bi2 = BigInt(intNr: 000_222)
+        let nrLong : Int = -333_000
+        let nrULong : UInt = 000_444
         
         // Test * (BIOP_10) operator with:
         //-- type BigInt and BigInt
@@ -368,14 +377,13 @@ class BigIntSwiftTest: XCTestCase {
         
         // Test complex expression with all possible types e.g.:
         //-- type BigInt, BigIntObjC, Long, BigInt, ULong
-        var bi4 = bi1 * (bi3 as BigInt) * nrLong * bi2 * nrULong
+        let bi4 = bi1 * (bi3 as BigInt) * nrLong * bi2 * nrULong
         result = (bi4.toString() == "-179559797007456000000000")
         XCTAssert(result, "Complex-Mul should equal -179559797007456000000000.")
     }
-    
+
     func test05_05_Arithmetic_Abs_Neg() {
-        var bi1 = BigInt(nr: 123_456_789)
-        var bi2 = BigInt(nr: -123_456_789)
+        let bi2 = BigInt(intNr: -123_456_789)
         
         // Testing abs with:
         //-- class method
@@ -401,14 +409,13 @@ class BigIntSwiftTest: XCTestCase {
         result = (bi2.toString() == "-123456789")
         XCTAssert(result, "IM bi2.neg() should equal -123456789")
     }
-    
+
     //MARK: - GMP 5.6 Division Functions ---------------------------------------
     func test05_06_Division_Ceil() {
         // N = Q * D + R
-        var bi1N = BigInt(nr: 101)
-        var bi1Q = BigInt()
-        var bi1D = BigInt(nr: 25)
-        var bi1R = BigInt()
+        let bi1N = BigInt(intNr: 101)
+        let bi1Q = BigInt()
+        let bi1D = BigInt(intNr: 25)
         var result = false
         
         // Test divCeilQ (ceil(101/25)=ceil(4.04)=5 -> Q = 5)
@@ -429,21 +436,21 @@ class BigIntSwiftTest: XCTestCase {
         result = (bi1Q.toString() == "5")
         XCTAssert(result, "CM divCeilQ(101,25) should result in bi1Q = 5 !")
     }
+
+    func test05_06_Division_Floor() {
+        //TODO ?
+    }
     
-//    func test05_06_Division_Floor() {
-//        //TODO ?
-//    }
-    
-//    func test05_06_Division_Truncate() {
-//        //TODO ?
-//    }
-    
+    func test05_06_Division_Truncate() {
+        //TODO ?
+    }
+
     func test05_06_Division_Operators() {
         // N = Q * D + R
-        var bi1 = BigInt(nr: 101)
-        var bi2 = BigInt(nr: -101)
-        var bi3 = BigInt(nr: 25)
-        var bi4 = BigInt(nr: -25)
+        let bi1 = BigInt(intNr: 101)
+        let bi2 = BigInt(intNr: -101)
+        let bi3 = BigInt(intNr: 25)
+        let bi4 = BigInt(intNr: -25)
         var result = false
         
         // Test * (BIOP_11) operator with:
@@ -521,13 +528,13 @@ class BigIntSwiftTest: XCTestCase {
         //        println("X. biQ=\(biQ.toString()), result=\(result)")
         XCTAssert(result, "ULong / -BigInt should result in biQ = -11 !")
     }
-    
+
     func test05_06_Division_Mod() {
         // N = Q * D + R
-        var bi1 = BigInt(nr: 123456)
-        var bi2 = BigInt(nr: -123456)
-        var bi3 = BigInt(nr: 78)
-        var bi4 = BigInt(nr: -78)
+        let bi1 = BigInt(intNr: 123456)
+        let bi2 = BigInt(intNr: -123456)
+        let bi3 = BigInt(intNr: 78)
+        let bi4 = BigInt(intNr: -78)
         var result = false
         
         //-- type BigInt and BigInt
@@ -550,13 +557,11 @@ class BigIntSwiftTest: XCTestCase {
         result = (biQ.toString() == "-60")
         XCTAssert(result, "IM BigInt % -BigInt should result in biQ = -60 !")
     }
-    
+
     func test05_06_Division_Mod_Operators() {
         // N = Q * D + R
-        var bi1 = BigInt(nr: 123456)
-        var bi2 = BigInt(nr: -123456)
-        var bi3 = BigInt(nr: 78)
-        var bi4 = BigInt(nr: -78)
+        let bi1 = BigInt(intNr: 123456)
+        let bi3 = BigInt(intNr: 78)
         var result = false
         
         // Test % (BIOP_12) operator with:
@@ -566,23 +571,23 @@ class BigIntSwiftTest: XCTestCase {
         XCTAssert(result, "BigInt % BigInt should result in biQ = 60 !")
         
         //-- type BigInt and SLong
-        var sLong : Int = -78
+        let sLong : Int = -78
         biQ = bi1 % sLong
         result = (biQ.toString() == "60")
         XCTAssert(result, "BigInt % BigInt should result in biQ = 60 !")
         
         //-- type BigInt and ULong
-        var uLong : UInt = 78
+        let uLong : UInt = 78
         biQ = bi1 % uLong
         result = (biQ.toString() == "60")
         XCTAssert(result, "BigInt % BigInt should result in biQ = 60 !")
     }
-    
+
     //MARK: - GMP 5.7 Exponentiation Functions ---------------------------------
     func test05_07_Exponentiation() {
-        var bi1 = BigInt(nr: 29)
-        var bi2 = BigInt(nr: -29)
-        var exp1 : UInt = 23
+        let bi1 = BigInt(intNr: 29)
+        let bi2 = BigInt(intNr: -29)
+        let exp1 : UInt = 23
         var result = false
         
         // Testing power with:
@@ -591,16 +596,16 @@ class BigIntSwiftTest: XCTestCase {
         result = (biPow.toString() == "-4316720717749415770740818372739989")
         XCTAssert(result, "CM biPow = BigInt.power(bi2,exp1) should equal -4316720717749415770740818372739989")
         //-- instance method (=IM)
-        biPow = BigInt(nr: 29)
+        biPow = bi1
         biPow.power(exp1)
         result = (biPow.toString() == "4316720717749415770740818372739989")
         XCTAssert(result, "IM bi1.power(exp1) should result in: 4316720717749415770740818372739989")
     }
-    
+
     func test05_07_Exponentiation_Operators() {
-        var bi1 = BigInt(nr: 29)
-        var bi2 = BigInt(nr: -29)
-        var exp1 : UInt = 23
+        let bi1 = BigInt(intNr: 29)
+        let bi2 = BigInt(intNr: -29)
+        let exp1 : UInt = 23
         var result = false
         
         // Test ** (BIOP_07) operator with:
@@ -613,59 +618,58 @@ class BigIntSwiftTest: XCTestCase {
         result = (biPow.toString() == "-4316720717749415770740818372739989")
         XCTAssert(result, "CM biPow = BigInt.power(bi2,exp1) should equal -4316720717749415770740818372739989")
     }
-    
+
     //MARK: - GMP 5.8 Root Extraction Functions --------------------------------
     func test05_08_RootExtraction() {
         // Test isPerfectPower with:
-        var err : NSError?
         //-- class method: 895430243255237372246531 = 11^23
-        var bi1 = BigInt(nr: "895430243255237372246531", error: &err)
+        var bi1 = try! BigInt(stringNr: "895430243255237372246531")
         var isPfPow = BigInt.isPerfectPower(bi1)
         XCTAssertTrue(isPfPow, "CM isPerfectPower(895430243255237372246531) should equal 'true'")
         //-- class method: 40353596 = 7^9 - 11
-        bi1 = BigInt(nr: 40353596)
+        bi1 = BigInt(intNr: 40353596)
         isPfPow = BigInt.isPerfectPower(bi1)
         XCTAssertFalse(isPfPow, "CM isPerfectPower(40353596) should equal 'false'")
         //-- instance method:
         isPfPow = bi1.isPerfectPower()
         XCTAssertFalse(isPfPow, "IM bi1.isPerfectPower() should equal 'false'")
         //-- instance method: -134217728 = (-8)^9
-        bi1 = BigInt(nr: -134217728)
+        bi1 = BigInt(intNr: -134217728)
         isPfPow = bi1.isPerfectPower()
         XCTAssertTrue(isPfPow, "IM -bi1.isPerfectPower() should equal 'true'")
         
         // Test isPerfectSquare with:
         //-- class method: 15241578750190521 = 123456789^2
-        var bi2 = BigInt(nr: 15241578750190521)
+        var bi2 = BigInt(intNr: 15241578750190521)
         var isPfSqr = BigInt.isPerfectSquare(bi2)
         XCTAssertTrue(isPfSqr, "CM isPerfectSquare(bi2) should equal 'true'")
         //-- class method: 15241578750190520 = 123456789^2 - 1
-        bi2 = BigInt(nr: 15241578750190520)
+        bi2 = BigInt(intNr: 15241578750190520)
         isPfSqr = BigInt.isPerfectSquare(bi2)
         XCTAssertFalse(isPfSqr, "CM isPerfectSquare(bi2) should equal 'false'")
         //-- instance method: 15241578750190520 = 123456789^2 - 1
         isPfSqr = bi2.isPerfectSquare()
         XCTAssertFalse(isPfSqr, "IM bi2.isPerfectSquare() should equal 'false'")
         //-- instance method: 15241578750190521 = 123456789^2
-        bi2 = BigInt(nr: 15241578750190521)
+        bi2 = BigInt(intNr: 15241578750190521)
         isPfSqr = bi2.isPerfectSquare()
         XCTAssertTrue(isPfSqr, "IM bi2.isPerfectSquare() should equal 'true'")
         
         // Test root with class method: 239072435685151324847153^(1/19) => 17
-        var biRoot = BigInt.root(BigInt(nr: "239072435685151324847153", error: &err), n: 19)
-        var result = (biRoot == 17) && (err == nil)
+        var biRoot = try! BigInt.root(BigInt(stringNr: "239072435685151324847153"), n: 19)
+        var result = (biRoot == 17)
         XCTAssert(result, "CM root(BigInt,23) should equal 17")
         // Test root with instance method: bi1^(1/16) =>
-        var bi3 = BigInt(nr: 4294967296)
+        let bi3 = BigInt(intNr: 4294967296)
         biRoot = bi3.root(16)
-        result = (biRoot == 4) && (err == nil)
+        result = (biRoot == 4)
         XCTAssert(result, "IM bi3.root(16) should equal 4")
         // Test root with instance setRoot method
         bi3.setRoot(16)
         XCTAssert((bi3 == 4), "IM bi3.setRoot(16) should equal 4")
         
         // Test sqrt with class method
-        var bi4 = BigInt(nr: 65556)
+        let bi4 = BigInt(intNr: 65556)
         var biSqrt = BigInt.sqrt(bi4)
         XCTAssert((biSqrt == 256), "CM sqrt(bi4) should equal 256")
         // Test sqrt with instance method
@@ -675,17 +679,17 @@ class BigIntSwiftTest: XCTestCase {
         bi4.setSqrt()
         XCTAssert((bi4 == 256), "IM sqrt(bi4) should equal 256")
     }
-    
-//    func test05_09_NumberTheoretic() {
-//    }
-    
+
+    func test05_09_NumberTheoretic() {
+    }
+
     //MARK: - GMP 5.10 Comparison Functions ------------------------------------
     func test05_10_Comparison() {
-        var bi1 = BigInt(nr: -111)
-        var bi2 = BigInt(nr: 0)
-        var bi3 = BigInt(nr: 111)
-        var sLong : Int = -222
-        var uLong : UInt = 222
+        let bi1 = BigInt(intNr: -111)
+        let bi2 = BigInt(intNr: 0)
+        let bi3 = BigInt(intNr: 111)
+        let sLong : Int = -222
+        let uLong : UInt = 222
         var result = false
         
         // Testing compare with:
@@ -694,7 +698,7 @@ class BigIntSwiftTest: XCTestCase {
         result = (cmpRes == -1)
         XCTAssert(result, "bi1.compare(bi2) should result in: -1")
         //-- type BigInt and 0 => bi2 equals 0
-        cmpRes = bi2.compare(BigInt(nr: 0))
+        cmpRes = bi2.compare(BigInt(intNr: 0))
         result = (cmpRes == 0)
         XCTAssert(result, "bi2.compare(0) should result in: 0")
         //-- type BigInt and BigInt => bi3 greater than bi2
@@ -711,7 +715,7 @@ class BigIntSwiftTest: XCTestCase {
         XCTAssert(result, "bi3.compare(uLong) should result in: -1")
         
         // Testing equals with type BigInt and BigInt
-        result = bi1.equals(BigInt(nr: -111))
+        result = bi1.equals(BigInt(intNr: -111))
         XCTAssert(result, "bi1.equals(-111) should result in: true")
         result = (bi1.equals(bi2) == false)
         XCTAssert(result, "bi1.equals(bi2) should result in: false")
@@ -731,15 +735,13 @@ class BigIntSwiftTest: XCTestCase {
         result = (bi3.sign() == 1)
         XCTAssert(result, "IM bi3.sign() should result in: 1")
     }
-    
+
     func test05_10_Comparison_Operators() {
-        var bi1 = BigInt(nr: -1234567890)
-        var bi2 = BigInt(nr: 0)
-        var bi3 = BigInt(nr: 987654321)
-        var sLong : Int = -1357924680
-        var uLong : UInt = 2468013579
-        var result = false
-        
+        let bi1 = BigInt(intNr: -1234567890)
+        let bi2 = BigInt(intNr: 0)
+        let sLong : Int = -1357924680
+        let uLong : UInt = 2468013579
+
         // Test < (BIOP_27) operator with:
         //-- type BigInt and BigInt
         XCTAssert(bi1 < bi2, "bi1 < bi2 should result in: true")
@@ -812,24 +814,23 @@ class BigIntSwiftTest: XCTestCase {
         //-- type ULong and BigInt
         XCTAssertTrue(uLong != bi1, "uLong != bi1 should result in: true")
     }
+
+    func test05_11_LogicalAndBitManipulation() {
+    }
+
+    func test05_12_InputAndOutput() {
+    }
+
+    func test05_13_RandomNumbers() {
+    }
     
-//
-//    func test05_11_LogicalAndBitManipulation() {
-//    }
-//
-//    func test05_12_InputAndOutput() {
-//    }
-//
-//    func test05_13_RandomNumbers() {
-//    }
-//    
-//    func test05_14_IntegerImportAndExport() {
-//    }
-//    
-//    func test05_15_Miscellaneous() {
-//    }
-//    
-//    func test05_16_Special() {
-//    }
+    func test05_14_IntegerImportAndExport() {
+    }
     
+    func test05_15_Miscellaneous() {
+    }
+    
+    func test05_16_Special() {
+    }
+
 }
