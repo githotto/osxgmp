@@ -53,21 +53,7 @@ public class BigInt : BigIntObjC {
     }
     private init(nr: String, base: Int32) throws {
         super.init();
-//        do {
-            try self.setStringAndBase(nr, base: base)
-//        } catch BigIntError.BIE_EmptyStringNumber {
-//            print("FailureReason: The String-number should not be empty or zero-sized.")
-//            print("RecoverySuggestion: Make sure that the string contains at least one digit.")
-//        } catch BigIntError.BIE_InvalidBaseNumber {
-//            print("FailureReason: The base-number is invalid.")
-//            print("RecoverySuggestion: Make sure the base-number is 0 or between 2 and 62.")
-//        } catch BigIntError.BIE_InvalidNumberFormat {
-//            print("FailureReason: The string-number is not a valid number-format for the current base.")
-//            print("RecoverySuggestion: heck that the number contains ONLY digits {0,..,9} for base <= 10 or 'digits' {A,..,Z,a,..,z} for 10 < base < 63.")
-//        }
-//        defer {
-//            print("This is the finally option")
-//        }
+        try self.setStringAndBase(nr, base: base)
     }
     convenience init(stringNr: String, error: NSErrorPointer) throws {
         try self.init(nr: stringNr, base: 10)
