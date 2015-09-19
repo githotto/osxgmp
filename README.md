@@ -29,12 +29,12 @@ I'ld love to extend the library with e.g. wrappers for BigFloat and BigRational.
 
 Requirements
 ============
-* Macintosh computer running OSX 10.9 or higher.
-* Latest Xcode 6.1 in order to play with Swift.
+* Swift 1.2, Xcode 6.4 and OSX 10.9 or higher. This is the default master branch!
+* Swift 2.0, Xcode 7.0 and OSX 10.10 or higher. For this you need the swift2_xcode7 branch!
 
 Contents
 ========
-OSXGMP is made with Xcode 6.1 and contains:
+OSXGMP is made with Xcode 6.4 / Xcode 7.0 and contains:
 - A GMP header file, a binary library build with the latest GMP 6.0.0.a release
 (https://gmplib.org) and the latest documentation in PDF format.
 - Ready to use Xcode project created with the OSX 'Command Line Tool' template and
@@ -43,7 +43,8 @@ target having test-classes for the Objective-C and Swift wrappers.
 
 Installation
 ============
-* Download the OSXGMP project on your computer.
+* Download the OSXGMP project on your computer (see above requirements to take into
+account your swift-version and which branch to select).
 * Note that the project is ready to use for playing with the Swift binding!
 If you want to use only the Objective-C binding, you've to create a new
 Objective-C 'Command Line Tool' project and copy / paste the appropriate files.
@@ -55,13 +56,39 @@ Usage
 Swift wrapper by adding your own code in the OSXGMP/main.swift file and use 'Xcode>Product>Run'
 to view the output in Xcode's console.
 
-Example code for multiplying two BigInt's:
+Depending on which github-branch you downloaded, you will find either one of the
+following examples:
+
+Swift 1.2 / Xcode 6.4 example code for multiplying two BigInt's:
 ```
+print("Hello, OSXGMP / BigInt World!\n")
 var err : NSError?
 var bi1 = BigInt(nr: 12468642135797531)
 var bi2 = BigInt(nr: "12345678901011121314151617181920", error: &err)
 var res = bi1 * bi2
 println("Multiply 2 BigInts: bi1 * bi2 = \(res.toString())")
+```
+yields the following result:
+```
+Multiply 2 BigInts: bi1 * bi2 = 153933852140173822960829726365674325601913839520
+```
+
+Swift 2.0 / Xcode 7 example code for multiplying two BigInt's:
+```
+print("Hello (Swift2.0/Xcode7), OSXGMP / BigInt World!\n")
+
+var bi1 = BigInt(intNr: 12468642135797531)
+do {
+var bi2 = try BigInt(stringNr: "12345678901011121314151617181920")
+var res = bi1 * bi2
+print("Multiply 2 BigInts: bi1 * bi2 = \(res.toString())")
+} catch BigIntError.EmptyStringNumber {
+print("EmptyStringNumber for bi2")
+} catch BigIntError.InvalidBaseNumber {
+print("InvalidBaseNumber for bi2")
+} catch BigIntError.InvalidNumberFormat {
+print("InvalidNumberFormat for bi2")
+}
 ```
 yields the following result:
 ```

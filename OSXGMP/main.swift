@@ -24,10 +24,17 @@ along with OSXGMP.  If not, see <http://www.gnu.org/licenses/>.
 
 import Foundation
 
-println("Hello, OSXGMP / BigInt World!\n")
+print("Hello (Swift2.0/Xcode7), OSXGMP / BigInt World!\n")
 
-var err : NSError?
-var bi1 = BigInt(nr: 12468642135797531)
-var bi2 = BigInt(nr: "12345678901011121314151617181920", error: &err)
-var res = bi1 * bi2
-println("Multiply 2 BigInts: bi1 * bi2 = \(res.toString())")
+var bi1 = BigInt(intNr: 12468642135797531)
+do {
+    var bi2 = try BigInt(stringNr: "12345678901011121314151617181920")
+    var res = bi1 * bi2
+    print("Multiply 2 BigInts: bi1 * bi2 = \(res.toString())")
+} catch BigIntError.EmptyStringNumber {
+    print("EmptyStringNumber for bi2")
+} catch BigIntError.InvalidBaseNumber {
+    print("InvalidBaseNumber for bi2")
+} catch BigIntError.InvalidNumberFormat {
+    print("InvalidNumberFormat for bi2")
+}
