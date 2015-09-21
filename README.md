@@ -7,7 +7,7 @@ either in Objective-C or in Swift.
 
 Motivation
 ==========
-This year I heard about the Project Euler website (see: https://projecteuler.net), and
+In 2014 I heard about the Project Euler website (see: https://projecteuler.net), and
 since I like to solve mathematical related problems, I promised myself to try it with
 Apple's latest Swift language only!
 Because Swift doesn't have a multiple precision library for this, like C#'s BigInteger or
