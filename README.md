@@ -79,15 +79,15 @@ print("Hello (Swift2.0/Xcode7), OSXGMP / BigInt World!\n")
 
 var bi1 = BigInt(intNr: 12468642135797531)
 do {
-var bi2 = try BigInt(stringNr: "12345678901011121314151617181920")
-var res = bi1 * bi2
-print("Multiply 2 BigInts: bi1 * bi2 = \(res.toString())")
+    var bi2 = try BigInt(stringNr: "12345678901011121314151617181920")
+    var res = bi1 * bi2
+    print("Multiply 2 BigInts: bi1 * bi2 = \(res.toString())")
 } catch BigIntError.EmptyStringNumber {
-print("EmptyStringNumber for bi2")
+    print("EmptyStringNumber for bi2")
 } catch BigIntError.InvalidBaseNumber {
-print("InvalidBaseNumber for bi2")
+    print("InvalidBaseNumber for bi2")
 } catch BigIntError.InvalidNumberFormat {
-print("InvalidNumberFormat for bi2")
+    print("InvalidNumberFormat for bi2")
 }
 ```
 yields the following result:
