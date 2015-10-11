@@ -29,8 +29,8 @@ I'ld love to extend the library with e.g. wrappers for BigFloat and BigRational.
 
 Requirements
 ============
-* Swift 1.2, Xcode 6.4 and OSX 10.9 or higher. This is the default master branch!
-* Swift 2.0, Xcode 7.0 and OSX 10.10 or higher. For this you need the swift2_xcode7 branch!
+* Swift 1.2, Xcode 6.4 and OSX 10.9 or higher. For this you need the swift1.2 branch!
+* Swift 2.0, Xcode 7.0 and OSX 10.10 or higher. This is the default master branch!
 
 Contents
 ========
