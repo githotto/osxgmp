@@ -31,10 +31,10 @@ do {
     var bi2 = try BigInt(stringNr: "12345678901011121314151617181920")
     var res = bi1 * bi2
     print("Multiply 2 BigInts: bi1 * bi2 = \(res.toString())")
-} catch BigIntError.EmptyStringNumber {
+} catch BigIntError.emptyStringNumber {
     print("EmptyStringNumber for bi2")
-} catch BigIntError.InvalidBaseNumber {
+} catch BigIntError.invalidBaseNumber {
     print("InvalidBaseNumber for bi2")
-} catch BigIntError.InvalidNumberFormat {
+} catch BigIntError.invalidNumberFormat {
     print("InvalidNumberFormat for bi2")
 }
