@@ -179,7 +179,7 @@ class BigIntSwiftTest: XCTestCase {
         XCTAssert((bi.toString() == "9"), "BigInt.toString() should equal 9 for base=10 !")
         
         // Test conversion to base 2.
-        XCTAssert((bi.toStringInBase(2) == "1001"), "BigInt.toString(2) should equal 1001 for base=2 !")
+        XCTAssert((bi.toString(inBase: 2) == "1001"), "BigInt.toString(2) should equal 1001 for base=2 !")
     }
 
     //MARK: - GMP 5.5 Arithmetic Functions -------------------------------------
@@ -192,16 +192,16 @@ class BigIntSwiftTest: XCTestCase {
         // Testing add for the GMP functions:
         //-- mpz_add
         let bi3 = BigInt.add(bi1, op2: bi2)
-        var result = (bi3.toString() == "222111000")
+        var result = (bi3?.toString() == "222111000")
         XCTAssert(result, "Add(bi1,bi2) should equal 222111000.")
         //-- mpz_add_ui
-        bi3.addULong(nrULong)
-        result = (bi3.toString() == "222222000")
+        bi3?.addULong(nrULong)
+        result = (bi3?.toString() == "222222000")
         XCTAssert(result, "Add(bi1,ULong) should equal 222222000.")
         //-- mpz_add_si. NOTE: not in GMP, but added for convenience.
-        bi3.addSLong(nrLong)
-        result = (bi3.toString() == "111222000")
-        print("\(bi3.toString())")
+        bi3?.addSLong(nrLong)
+        result = (bi3?.toString() == "111222000")
+        print("\(bi3?.toString())")
         XCTAssert(result, "Add(bi1,Long) should equal 111222000.")
     }
 
@@ -250,15 +250,15 @@ class BigIntSwiftTest: XCTestCase {
         // Testing substract for the GMP functions:
         //-- mpz_sub
         let bi3 = BigInt.sub(bi1, op2: bi2)
-        var result = (bi3.toString() == "221889000")
+        var result = (bi3?.toString() == "221889000")
         XCTAssert(result, "Sub(bi1,bi2) should equal 221889000.")
         //-- mpz_sub_ui
-        bi3.subULong(nrULong)
-        result = (bi3.toString() == "221778000")
+        bi3?.subULong(nrULong)
+        result = (bi3?.toString() == "221778000")
         XCTAssert(result, "Sub(bi3,ULong) should equal 221778000.")
         //-- mpz_sub_si. NOTE: not in GMP, but added for convenience.
-        bi3.subSLong(nrLong)
-        result = (bi3.toString() == "332778000")
+        bi3?.subSLong(nrLong)
+        result = (bi3?.toString() == "332778000")
         XCTAssert(result, "Sub(bi3,ULong) should equal 332778000.")
         //-- mpz_ui_sub is NOT implemented/tested!
     }
@@ -301,44 +301,44 @@ class BigIntSwiftTest: XCTestCase {
         // Testing multiply for the GMP functions:
         //-- mpz_mul (with type BigInt and BigInt)
         var bi3 = BigInt.mul(bi1, op2: bi2)
-        var result = (bi3.toString() == "24642000")
+        var result = (bi3?.toString() == "24642000")
         XCTAssert(result, "Mul(bi1,bi2) should equal 24642000.")
         //-- mpz_mul_si (with type BigInt and Long)
         bi3 = BigInt.mulSLong(bi1, op2: nrLong)
-        result = (bi3.toString() == "-36963000000")
+        result = (bi3?.toString() == "-36963000000")
         XCTAssert(result, "Mul(bi1,nrLong) should equal -36963000000.")
         //-- mpz_mul_ui (with type BigInt and ULong)
         bi3 = BigInt.mulULong(bi1, op2: nrULong)
-        result = (bi3.toString() == "49284000")
+        result = (bi3?.toString() == "49284000")
         XCTAssert(result, "Mul(bi1,nrLong) should equal 49284000.")
         
         // Testing GMP functions:
         //-- mpz_addmul (with type BigInt and BigInt)
         bi3 = BigInt(intNr: 000_333)
-        bi3.addMul(bi1, op2: bi2)
-        result = (bi3.toString() == "24642333")
+        bi3?.addMul(bi1, op2: bi2)
+        result = (bi3?.toString() == "24642333")
         XCTAssert(result, "addMul(bi1,bi2) should equal 24642333.")
         //-- mpz_addmul_ui (with type BigInt and ULong)
-        bi3.addMulULong(bi1, op2: nrULong)
-        result = (bi3.toString() == "73926333")
+        bi3?.addMulULong(bi1, op2: nrULong)
+        result = (bi3?.toString() == "73926333")
         XCTAssert(result, "addMulULong(bi1,nrULong) should equal 73926333.")
         //-- mpz_submul (with type BigInt and BigInt)
-        bi3.subMul(bi1, op2: bi2)
-        result = (bi3.toString() == "49284333")
+        bi3?.subMul(bi1, op2: bi2)
+        result = (bi3?.toString() == "49284333")
         XCTAssert(result, "addMul(bi1,bi2) should equal 49284333.")
         //-- mpz_submul_ui (with type BigInt and ULong)
-        bi3.subMulULong(bi1, op2: nrULong)
-        result = (bi3.toString() == "333")
+        bi3?.subMulULong(bi1, op2: nrULong)
+        result = (bi3?.toString() == "333")
         XCTAssert(result, "addMulULong(bi1,nrULong) should equal 333.")
         //-- mpz_mul_2exp with instance method:
         bi3 = BigInt(nr: bi2)
         let expULong: UInt = 22
-        bi3.mul2Exp(expULong)   //= 222 * 2^22
-        result = (bi3.toString() == "931135488")
+        bi3?.mul2Exp(expULong)   //= 222 * 2^22
+        result = (bi3?.toString() == "931135488")
         XCTAssert(result, "Mul2Exp(222,22) should equal 931135488.")
         //-- mpz_mul_2exp with class method:
         bi3 = BigInt.mul2Exp(bi1, exp: 11) //=11100 * 2^11
-        result = (bi3.toString() == "227328000")
+        result = (bi3?.toString() == "227328000")
         XCTAssert(result, "Mul2Exp(222,22) should equal 227328000.")
     }
 
@@ -421,7 +421,7 @@ class BigIntSwiftTest: XCTestCase {
         // Test divCeilQ (ceil(101/25)=ceil(4.04)=5 -> Q = 5)
         //-- GMP: mpz_cdiv_q with (BigIntObjC *) instance method (=IM):
         var bi2 = bi1N.divCeilQ(bi1D)
-        result = (bi2.toString() == "5")
+        result = (bi2?.toString() == "5")
         XCTAssert(result, "IM divCeilQ(101,25) should result in bi2 = 5 !")
         //-- GMP: mpz_cdiv_q with (void) instance method:
         bi1N.divCeilQ(bi1Q, d: bi1D)
@@ -539,22 +539,22 @@ class BigIntSwiftTest: XCTestCase {
         
         //-- type BigInt and BigInt
         var biQ = bi1.mod(bi3)
-        result = (biQ.toString() == "60")
+        result = (biQ?.toString() == "60")
         XCTAssert(result, "IM BigInt % BigInt should result in biQ = 60 !")
         
         //-- type BigInt and -BigInt
         biQ = bi1.mod(bi4)
-        result = (biQ.toString() == "60")
+        result = (biQ?.toString() == "60")
         XCTAssert(result, "IM BigInt % -BigInt should result in biQ = 60 !")
         
         //-- type -BigInt and BigInt
         biQ = bi2.mod(bi3)
-        result = (biQ.toString() == "-60")
+        result = (biQ?.toString() == "-60")
         XCTAssert(result, "IM BigInt % BigInt should result in biQ = -60 !")
         
         //-- type -BigInt and -BigInt
         biQ = bi2.mod(bi4)
-        result = (biQ.toString() == "-60")
+        result = (biQ?.toString() == "-60")
         XCTAssert(result, "IM BigInt % -BigInt should result in biQ = -60 !")
     }
 
@@ -593,12 +593,12 @@ class BigIntSwiftTest: XCTestCase {
         // Testing power with:
         //-- class method (=CM)
         var biPow = BigInt.power(bi2, exp: exp1)
-        result = (biPow.toString() == "-4316720717749415770740818372739989")
+        result = (biPow?.toString() == "-4316720717749415770740818372739989")
         XCTAssert(result, "CM biPow = BigInt.power(bi2,exp1) should equal -4316720717749415770740818372739989")
         //-- instance method (=IM)
         biPow = bi1
-        biPow.power(exp1)
-        result = (biPow.toString() == "4316720717749415770740818372739989")
+        biPow?.power(exp1)
+        result = (biPow?.toString() == "4316720717749415770740818372739989")
         XCTAssert(result, "IM bi1.power(exp1) should result in: 4316720717749415770740818372739989")
     }
 
@@ -706,11 +706,11 @@ class BigIntSwiftTest: XCTestCase {
         result = (cmpRes == 1)
         XCTAssert(result, "bi3.compare(bi2) should result in: 1")
         //-- type BigInt and SLong
-        cmpRes = bi1.compareWithSLong(sLong)
+        cmpRes = bi1.compare(withSLong: sLong)
         result = (cmpRes == 1)
         XCTAssert(result, "bi1.compare(sLong) should result in: 1")
         //-- type BigInt and ULong
-        cmpRes = bi3.compareWithULong(uLong)
+        cmpRes = bi3.compare(withULong: uLong)
         result = (cmpRes == -1)
         XCTAssert(result, "bi3.compare(uLong) should result in: -1")
         

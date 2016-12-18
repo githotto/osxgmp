@@ -258,6 +258,7 @@
 					};
 					279A74751A16C32A008D8C51 = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -454,6 +455,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.tofh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -475,6 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.tofh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -25,9 +25,9 @@ along with OSXGMP.  If not, see <http://www.gnu.org/licenses/>.
 import Foundation
 
 enum BigIntError: Error {
-    case emptyStringNumber
-    case invalidBaseNumber
-    case invalidNumberFormat
+    case EmptyStringNumber
+    case InvalidBaseNumber
+    case InvalidNumberFormat
 }
 
 open class BigInt : BigIntObjC {
@@ -66,15 +66,15 @@ open class BigInt : BigIntObjC {
     }
     fileprivate func setStringAndBase(_ stringNr: String, base: Int32) throws {
         guard ((base == 0) || ((base > 1) && (base < 63))) else {
-            throw BigIntError.invalidBaseNumber
+            throw BigIntError.InvalidBaseNumber
         }
         guard stringNr.characters.count > 0 else {
-            throw BigIntError.emptyStringNumber
+            throw BigIntError.EmptyStringNumber
         }
         var err : NSError?
         let mpzSetStr = super.setFrom(stringNr, withBase: base, error: &err)
         guard !((mpzSetStr == -1) && (stringNr.characters.count > 0)) else {
-            throw BigIntError.invalidNumberFormat
+            throw BigIntError.InvalidNumberFormat
         }
     }
 
