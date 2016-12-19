@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B9CABFAE1E076C7E0029E81C /* OSXGMPFrameworkMac.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CABFA01E076C7E0029E81C /* OSXGMPFrameworkMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CABFAE1E076C7E0029E81C /* SwiftGMPFrameworkMac.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CABFA01E076C7E0029E81C /* SwiftGMPFrameworkMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9CABFB51E076D4E0029E81C /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 279A745D1A16BF12008D8C51 /* libgmp.a */; };
-		B9CABFB61E076D770029E81C /* OSXGMPFrameworkMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CABF9E1E076C7E0029E81C /* OSXGMPFrameworkMac.framework */; };
+		B9CABFB61E076D770029E81C /* SwiftGMPFrameworkMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CABF9E1E076C7E0029E81C /* SwiftGMPFrameworkMac.framework */; };
 		B9CABFB71E076E540029E81C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A74531A16BED3008D8C51 /* main.swift */; };
 		B9CABFDF1E0770B20029E81C /* BigFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CABFCE1E0770B20029E81C /* BigFloat.swift */; };
 		B9CABFE41E0770B20029E81C /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CABFD41E0770B20029E81C /* BigInt.swift */; };
@@ -27,7 +27,7 @@
 		B9CABFF91E0774560029E81C /* BigRationalError.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CABFDB1E0770B20029E81C /* BigRationalError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9CABFFA1E0774560029E81C /* BigRationalObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CABFDD1E0770B20029E81C /* BigRationalObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9CABFFB1E07746D0029E81C /* gmp.h in Headers */ = {isa = PBXBuildFile; fileRef = 279A745B1A16BF12008D8C51 /* gmp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B9CAC0091E077B250029E81C /* OSXGMPFrameworkMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CABF9E1E076C7E0029E81C /* OSXGMPFrameworkMac.framework */; };
+		B9CAC0091E077B250029E81C /* SwiftGMPFrameworkMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CABF9E1E076C7E0029E81C /* SwiftGMPFrameworkMac.framework */; };
 		B9CAC0111E077B630029E81C /* BigIntObjCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAC00F1E077B630029E81C /* BigIntObjCTest.m */; };
 		B9CAC0121E077B630029E81C /* BigIntSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CAC0101E077B630029E81C /* BigIntSwiftTest.swift */; };
 		B9CAC0171E077C3E0029E81C /* BigFloatObjCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAC0131E077C3E0029E81C /* BigFloatObjCTest.m */; };
@@ -68,16 +68,14 @@
 /* Begin PBXFileReference section */
 		271FAF181A179D2B003E3660 /* gmp-man-6.0.0a.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "gmp-man-6.0.0a.pdf"; sourceTree = "<group>"; };
 		278DD3721A17E6B40092001A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		278DD3731A17E6BD0092001A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		279A74501A16BED3008D8C51 /* OSXGMP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSXGMP; sourceTree = BUILT_PRODUCTS_DIR; };
+		279A74501A16BED3008D8C51 /* SwiftGMP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftGMP; sourceTree = BUILT_PRODUCTS_DIR; };
 		279A74531A16BED3008D8C51 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		279A745B1A16BF12008D8C51 /* gmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gmp.h; sourceTree = "<group>"; };
 		279A745C1A16BF12008D8C51 /* libgmp.10.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgmp.10.dylib; sourceTree = "<group>"; };
 		279A745D1A16BF12008D8C51 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
 		279A745E1A16BF12008D8C51 /* libgmp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgmp.dylib; sourceTree = "<group>"; };
-		27B50AE61A19489D00F3EC58 /* COPYINGv3 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYINGv3; sourceTree = "<group>"; };
-		B9CABF9E1E076C7E0029E81C /* OSXGMPFrameworkMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSXGMPFrameworkMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9CABFA01E076C7E0029E81C /* OSXGMPFrameworkMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSXGMPFrameworkMac.h; sourceTree = "<group>"; };
+		B9CABF9E1E076C7E0029E81C /* SwiftGMPFrameworkMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftGMPFrameworkMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9CABFA01E076C7E0029E81C /* SwiftGMPFrameworkMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftGMPFrameworkMac.h; sourceTree = "<group>"; };
 		B9CABFA11E076C7E0029E81C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9CABFCE1E0770B20029E81C /* BigFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigFloat.swift; sourceTree = "<group>"; };
 		B9CABFCF1E0770B20029E81C /* BigFloatError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigFloatError.h; sourceTree = "<group>"; };
@@ -94,7 +92,7 @@
 		B9CABFDC1E0770B20029E81C /* BigRationalError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigRationalError.m; sourceTree = "<group>"; };
 		B9CABFDD1E0770B20029E81C /* BigRationalObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigRationalObjC.h; sourceTree = "<group>"; };
 		B9CABFDE1E0770B20029E81C /* BigRationalObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigRationalObjC.m; sourceTree = "<group>"; };
-		B9CAC0041E077B250029E81C /* OSXGMPFrameworkMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXGMPFrameworkMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9CAC0041E077B250029E81C /* SwiftGMPFrameworkMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGMPFrameworkMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CAC0081E077B250029E81C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9CAC00F1E077B630029E81C /* BigIntObjCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigIntObjCTest.m; sourceTree = "<group>"; };
 		B9CAC0101E077B630029E81C /* BigIntSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigIntSwiftTest.swift; sourceTree = "<group>"; };
@@ -109,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9CABFB61E076D770029E81C /* OSXGMPFrameworkMac.framework in Frameworks */,
+				B9CABFB61E076D770029E81C /* SwiftGMPFrameworkMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9CAC0091E077B250029E81C /* OSXGMPFrameworkMac.framework in Frameworks */,
+				B9CAC0091E077B250029E81C /* SwiftGMPFrameworkMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +135,10 @@
 			children = (
 				B9CABFCC1E0770B20029E81C /* LibWrappers */,
 				279A745A1A16BF12008D8C51 /* GMP */,
-				279A74521A16BED3008D8C51 /* OSXGMP */,
-				B9CABF9F1E076C7E0029E81C /* OSXGMPFrameworkMac */,
-				B9CAC0051E077B250029E81C /* OSXGMPFrameworkMacTests */,
+				279A74521A16BED3008D8C51 /* SwiftGMP */,
+				B9CABF9F1E076C7E0029E81C /* SwiftGMPFrameworkMac */,
+				B9CAC0051E077B250029E81C /* SwiftGMPFrameworkMacTests */,
 				279A74511A16BED3008D8C51 /* Products */,
-				27B50AE61A19489D00F3EC58 /* COPYINGv3 */,
-				278DD3731A17E6BD0092001A /* LICENSE */,
 				278DD3721A17E6B40092001A /* README.md */,
 			);
 			sourceTree = "<group>";
@@ -150,18 +146,19 @@
 		279A74511A16BED3008D8C51 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				279A74501A16BED3008D8C51 /* OSXGMP */,
-				B9CABF9E1E076C7E0029E81C /* OSXGMPFrameworkMac.framework */,
-				B9CAC0041E077B250029E81C /* OSXGMPFrameworkMacTests.xctest */,
+				279A74501A16BED3008D8C51 /* SwiftGMP */,
+				B9CABF9E1E076C7E0029E81C /* SwiftGMPFrameworkMac.framework */,
+				B9CAC0041E077B250029E81C /* SwiftGMPFrameworkMacTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		279A74521A16BED3008D8C51 /* OSXGMP */ = {
+		279A74521A16BED3008D8C51 /* SwiftGMP */ = {
 			isa = PBXGroup;
 			children = (
 				279A74531A16BED3008D8C51 /* main.swift */,
 			);
+			name = SwiftGMP;
 			path = OSXGMP;
 			sourceTree = "<group>";
 		};
@@ -177,12 +174,13 @@
 			path = GMP;
 			sourceTree = "<group>";
 		};
-		B9CABF9F1E076C7E0029E81C /* OSXGMPFrameworkMac */ = {
+		B9CABF9F1E076C7E0029E81C /* SwiftGMPFrameworkMac */ = {
 			isa = PBXGroup;
 			children = (
-				B9CABFA01E076C7E0029E81C /* OSXGMPFrameworkMac.h */,
+				B9CABFA01E076C7E0029E81C /* SwiftGMPFrameworkMac.h */,
 				B9CABFA11E076C7E0029E81C /* Info.plist */,
 			);
+			name = SwiftGMPFrameworkMac;
 			path = OSXGMPFrameworkMac;
 			sourceTree = "<group>";
 		};
@@ -232,7 +230,7 @@
 			path = BigRational;
 			sourceTree = "<group>";
 		};
-		B9CAC0051E077B250029E81C /* OSXGMPFrameworkMacTests */ = {
+		B9CAC0051E077B250029E81C /* SwiftGMPFrameworkMacTests */ = {
 			isa = PBXGroup;
 			children = (
 				B9CAC0131E077C3E0029E81C /* BigFloatObjCTest.m */,
@@ -243,6 +241,7 @@
 				B9CAC0101E077B630029E81C /* BigIntSwiftTest.swift */,
 				B9CAC0081E077B250029E81C /* Info.plist */,
 			);
+			name = SwiftGMPFrameworkMacTests;
 			path = OSXGMPFrameworkMacTests;
 			sourceTree = "<group>";
 		};
@@ -254,7 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9CABFFB1E07746D0029E81C /* gmp.h in Headers */,
-				B9CABFAE1E076C7E0029E81C /* OSXGMPFrameworkMac.h in Headers */,
+				B9CABFAE1E076C7E0029E81C /* SwiftGMPFrameworkMac.h in Headers */,
 				B9CABFF51E0774560029E81C /* BigFloatError.h in Headers */,
 				B9CABFF61E0774560029E81C /* BigFloatObjC.h in Headers */,
 				B9CABFF71E0774560029E81C /* BigIntError.h in Headers */,
@@ -267,9 +266,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		279A744F1A16BED3008D8C51 /* OSXGMP */ = {
+		279A744F1A16BED3008D8C51 /* SwiftGMP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 279A74571A16BED3008D8C51 /* Build configuration list for PBXNativeTarget "OSXGMP" */;
+			buildConfigurationList = 279A74571A16BED3008D8C51 /* Build configuration list for PBXNativeTarget "SwiftGMP" */;
 			buildPhases = (
 				279A744C1A16BED3008D8C51 /* Sources */,
 				279A744D1A16BED3008D8C51 /* Frameworks */,
@@ -280,14 +279,14 @@
 			dependencies = (
 				B9CABFFD1E07760B0029E81C /* PBXTargetDependency */,
 			);
-			name = OSXGMP;
+			name = SwiftGMP;
 			productName = OSXGMP;
-			productReference = 279A74501A16BED3008D8C51 /* OSXGMP */;
+			productReference = 279A74501A16BED3008D8C51 /* SwiftGMP */;
 			productType = "com.apple.product-type.tool";
 		};
-		B9CABF9D1E076C7E0029E81C /* OSXGMPFrameworkMac */ = {
+		B9CABF9D1E076C7E0029E81C /* SwiftGMPFrameworkMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B9CABFAF1E076C7E0029E81C /* Build configuration list for PBXNativeTarget "OSXGMPFrameworkMac" */;
+			buildConfigurationList = B9CABFAF1E076C7E0029E81C /* Build configuration list for PBXNativeTarget "SwiftGMPFrameworkMac" */;
 			buildPhases = (
 				B9CABF991E076C7E0029E81C /* Sources */,
 				B9CABF9A1E076C7E0029E81C /* Frameworks */,
@@ -298,14 +297,14 @@
 			);
 			dependencies = (
 			);
-			name = OSXGMPFrameworkMac;
+			name = SwiftGMPFrameworkMac;
 			productName = OSXGMPFrameworkMac;
-			productReference = B9CABF9E1E076C7E0029E81C /* OSXGMPFrameworkMac.framework */;
+			productReference = B9CABF9E1E076C7E0029E81C /* SwiftGMPFrameworkMac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B9CAC0031E077B250029E81C /* OSXGMPFrameworkMacTests */ = {
+		B9CAC0031E077B250029E81C /* SwiftGMPFrameworkMacTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B9CAC00C1E077B250029E81C /* Build configuration list for PBXNativeTarget "OSXGMPFrameworkMacTests" */;
+			buildConfigurationList = B9CAC00C1E077B250029E81C /* Build configuration list for PBXNativeTarget "SwiftGMPFrameworkMacTests" */;
 			buildPhases = (
 				B9CAC0001E077B250029E81C /* Sources */,
 				B9CAC0011E077B250029E81C /* Frameworks */,
@@ -316,9 +315,9 @@
 			dependencies = (
 				B9CAC00B1E077B250029E81C /* PBXTargetDependency */,
 			);
-			name = OSXGMPFrameworkMacTests;
+			name = SwiftGMPFrameworkMacTests;
 			productName = OSXGMPFrameworkMacTests;
-			productReference = B9CAC0041E077B250029E81C /* OSXGMPFrameworkMacTests.xctest */;
+			productReference = B9CAC0041E077B250029E81C /* SwiftGMPFrameworkMacTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -346,7 +345,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 279A744B1A16BED3008D8C51 /* Build configuration list for PBXProject "OSXGMP" */;
+			buildConfigurationList = 279A744B1A16BED3008D8C51 /* Build configuration list for PBXProject "SwiftGMP" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -358,9 +357,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				279A744F1A16BED3008D8C51 /* OSXGMP */,
-				B9CABF9D1E076C7E0029E81C /* OSXGMPFrameworkMac */,
-				B9CAC0031E077B250029E81C /* OSXGMPFrameworkMacTests */,
+				279A744F1A16BED3008D8C51 /* SwiftGMP */,
+				B9CABF9D1E076C7E0029E81C /* SwiftGMPFrameworkMac */,
+				B9CAC0031E077B250029E81C /* SwiftGMPFrameworkMacTests */,
 			);
 		};
 /* End PBXProject section */
@@ -425,12 +424,12 @@
 /* Begin PBXTargetDependency section */
 		B9CABFFD1E07760B0029E81C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B9CABF9D1E076C7E0029E81C /* OSXGMPFrameworkMac */;
+			target = B9CABF9D1E076C7E0029E81C /* SwiftGMPFrameworkMac */;
 			targetProxy = B9CABFFC1E07760B0029E81C /* PBXContainerItemProxy */;
 		};
 		B9CAC00B1E077B250029E81C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B9CABF9D1E076C7E0029E81C /* OSXGMPFrameworkMac */;
+			target = B9CABF9D1E076C7E0029E81C /* SwiftGMPFrameworkMac */;
 			targetProxy = B9CAC00A1E077B250029E81C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -523,9 +522,15 @@
 		279A74581A16BED3008D8C51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				LD_NO_PIE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_STYLE = "non-global";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
@@ -535,9 +540,15 @@
 		279A74591A16BED3008D8C51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				LD_NO_PIE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_STYLE = "non-global";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
@@ -547,7 +558,7 @@
 		B9CABFB01E076C7E0029E81C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -566,6 +577,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GMP",
 				);
+				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.webbdev.OSXGMPFrameworkMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -579,7 +591,7 @@
 		B9CABFB11E076C7E0029E81C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -591,6 +603,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
+				GCC_OPTIMIZATION_LEVEL = 2;
 				INFOPLIST_FILE = OSXGMPFrameworkMac/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
@@ -598,6 +611,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GMP",
 				);
+				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.webbdev.OSXGMPFrameworkMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -635,6 +649,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
 				INFOPLIST_FILE = OSXGMPFrameworkMacTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.webbdev.OSXGMPFrameworkMacTests;
@@ -646,7 +661,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		279A744B1A16BED3008D8C51 /* Build configuration list for PBXProject "OSXGMP" */ = {
+		279A744B1A16BED3008D8C51 /* Build configuration list for PBXProject "SwiftGMP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				279A74551A16BED3008D8C51 /* Debug */,
@@ -655,7 +670,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		279A74571A16BED3008D8C51 /* Build configuration list for PBXNativeTarget "OSXGMP" */ = {
+		279A74571A16BED3008D8C51 /* Build configuration list for PBXNativeTarget "SwiftGMP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				279A74581A16BED3008D8C51 /* Debug */,
@@ -664,7 +679,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B9CABFAF1E076C7E0029E81C /* Build configuration list for PBXNativeTarget "OSXGMPFrameworkMac" */ = {
+		B9CABFAF1E076C7E0029E81C /* Build configuration list for PBXNativeTarget "SwiftGMPFrameworkMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9CABFB01E076C7E0029E81C /* Debug */,
@@ -672,7 +687,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		B9CAC00C1E077B250029E81C /* Build configuration list for PBXNativeTarget "OSXGMPFrameworkMacTests" */ = {
+		B9CAC00C1E077B250029E81C /* Build configuration list for PBXNativeTarget "SwiftGMPFrameworkMacTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9CAC00D1E077B250029E81C /* Debug */,

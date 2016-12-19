@@ -23,7 +23,7 @@ along with OSXGMP.  If not, see <http://www.gnu.org/licenses/>.
 //
 
 import Foundation
-import OSXGMPFrameworkMac
+import SwiftGMPFrameworkMac
 
 print("Hello (Swift3.0/Xcode8.2), OSXGMP / BigInt World!\n")
 

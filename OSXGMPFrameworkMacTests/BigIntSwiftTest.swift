@@ -25,7 +25,7 @@ along with OSXGMP.  If not, see <http://www.gnu.org/licenses/>.
 import Cocoa
 import Foundation
 import XCTest
-import OSXGMPFrameworkMac
+import SwiftGMPFrameworkMac
 
 class BigIntSwiftTest: XCTestCase {
     
