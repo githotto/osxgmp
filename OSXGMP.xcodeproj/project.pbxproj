@@ -7,30 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		271FAF191A179D2B003E3660 /* gmp-man-6.0.0a.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 271FAF181A179D2B003E3660 /* gmp-man-6.0.0a.pdf */; };
-		274854591A195BC000CA9364 /* BigFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274854541A195BC000CA9364 /* BigFloat.swift */; };
-		2748545A1A195BC000CA9364 /* BigFloatError.m in Sources */ = {isa = PBXBuildFile; fileRef = 274854561A195BC000CA9364 /* BigFloatError.m */; };
-		2748545B1A195BC000CA9364 /* BigFloatObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 274854581A195BC000CA9364 /* BigFloatObjC.m */; };
-		274854621A195D3F00CA9364 /* BigRational.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2748545D1A195D3F00CA9364 /* BigRational.swift */; };
-		274854631A195D3F00CA9364 /* BigRationalError.m in Sources */ = {isa = PBXBuildFile; fileRef = 2748545F1A195D3F00CA9364 /* BigRationalError.m */; };
-		274854641A195D3F00CA9364 /* BigRationalObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 274854611A195D3F00CA9364 /* BigRationalObjC.m */; };
-		274854661A195E1800CA9364 /* BigFloatObjCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 274854651A195E1800CA9364 /* BigFloatObjCTest.m */; };
-		274854681A195E6B00CA9364 /* BigFloatSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274854671A195E6B00CA9364 /* BigFloatSwiftTest.swift */; };
-		2748546A1A195E9100CA9364 /* BigRationalObjCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 274854691A195E9100CA9364 /* BigRationalObjCTest.m */; };
-		2748546E1A195F2E00CA9364 /* BigRationalSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2748546D1A195F2E00CA9364 /* BigRationalSwiftTest.swift */; };
-		279A74541A16BED3008D8C51 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A74531A16BED3008D8C51 /* main.swift */; };
-		279A74651A16BF20008D8C51 /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A74601A16BF20008D8C51 /* BigInt.swift */; };
-		279A74661A16BF20008D8C51 /* BigIntError.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74621A16BF20008D8C51 /* BigIntError.m */; };
-		279A74671A16BF20008D8C51 /* BigIntObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74641A16BF20008D8C51 /* BigIntObjC.m */; };
-		279A74681A16BF31008D8C51 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 279A745D1A16BF12008D8C51 /* libgmp.a */; };
-		27B50AE71A19489D00F3EC58 /* COPYINGv3 in Resources */ = {isa = PBXBuildFile; fileRef = 27B50AE61A19489D00F3EC58 /* COPYINGv3 */; };
-		27F5E1A01A177959003DB35E /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 279A745D1A16BF12008D8C51 /* libgmp.a */; };
-		27F5E1A11A177965003DB35E /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A74601A16BF20008D8C51 /* BigInt.swift */; };
-		27F5E1A21A177968003DB35E /* BigIntError.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74621A16BF20008D8C51 /* BigIntError.m */; };
-		27F5E1A31A17796B003DB35E /* BigIntObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 279A74641A16BF20008D8C51 /* BigIntObjC.m */; };
-		27F5E1A91A177C0C003DB35E /* BigIntSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F5E1A81A177C0C003DB35E /* BigIntSwiftTest.swift */; };
-		27F5E1AB1A177C9F003DB35E /* BigIntObjCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5E1AA1A177C9F003DB35E /* BigIntObjCTest.m */; };
+		B9CABFAE1E076C7E0029E81C /* OSXGMPFrameworkMac.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CABFA01E076C7E0029E81C /* OSXGMPFrameworkMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CABFB51E076D4E0029E81C /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 279A745D1A16BF12008D8C51 /* libgmp.a */; };
+		B9CABFB61E076D770029E81C /* OSXGMPFrameworkMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CABF9E1E076C7E0029E81C /* OSXGMPFrameworkMac.framework */; };
+		B9CABFB71E076E540029E81C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A74531A16BED3008D8C51 /* main.swift */; };
+		B9CABFDF1E0770B20029E81C /* BigFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CABFCE1E0770B20029E81C /* BigFloat.swift */; };
+		B9CABFE41E0770B20029E81C /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CABFD41E0770B20029E81C /* BigInt.swift */; };
+		B9CABFE91E0770B20029E81C /* BigRational.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CABFDA1E0770B20029E81C /* BigRational.swift */; };
+		B9CABFEF1E0773350029E81C /* BigIntError.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CABFD61E0770B20029E81C /* BigIntError.m */; };
+		B9CABFF01E0773380029E81C /* BigIntObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CABFD81E0770B20029E81C /* BigIntObjC.m */; };
+		B9CABFF11E0773440029E81C /* BigRationalError.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CABFDC1E0770B20029E81C /* BigRationalError.m */; };
+		B9CABFF21E0773470029E81C /* BigRationalObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CABFDE1E0770B20029E81C /* BigRationalObjC.m */; };
+		B9CABFF31E0773500029E81C /* BigFloatError.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CABFD01E0770B20029E81C /* BigFloatError.m */; };
+		B9CABFF41E0773530029E81C /* BigFloatObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CABFD21E0770B20029E81C /* BigFloatObjC.m */; };
+		B9CABFF51E0774560029E81C /* BigFloatError.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CABFCF1E0770B20029E81C /* BigFloatError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CABFF61E0774560029E81C /* BigFloatObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CABFD11E0770B20029E81C /* BigFloatObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CABFF71E0774560029E81C /* BigIntError.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CABFD51E0770B20029E81C /* BigIntError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CABFF81E0774560029E81C /* BigIntObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CABFD71E0770B20029E81C /* BigIntObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CABFF91E0774560029E81C /* BigRationalError.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CABFDB1E0770B20029E81C /* BigRationalError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CABFFA1E0774560029E81C /* BigRationalObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CABFDD1E0770B20029E81C /* BigRationalObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CABFFB1E07746D0029E81C /* gmp.h in Headers */ = {isa = PBXBuildFile; fileRef = 279A745B1A16BF12008D8C51 /* gmp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CAC0091E077B250029E81C /* OSXGMPFrameworkMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CABF9E1E076C7E0029E81C /* OSXGMPFrameworkMac.framework */; };
+		B9CAC0111E077B630029E81C /* BigIntObjCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAC00F1E077B630029E81C /* BigIntObjCTest.m */; };
+		B9CAC0121E077B630029E81C /* BigIntSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CAC0101E077B630029E81C /* BigIntSwiftTest.swift */; };
+		B9CAC0171E077C3E0029E81C /* BigFloatObjCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAC0131E077C3E0029E81C /* BigFloatObjCTest.m */; };
+		B9CAC0181E077C3E0029E81C /* BigFloatSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CAC0141E077C3E0029E81C /* BigFloatSwiftTest.swift */; };
+		B9CAC0191E077C3E0029E81C /* BigRationalObjCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAC0151E077C3E0029E81C /* BigRationalObjCTest.m */; };
+		B9CAC01A1E077C3E0029E81C /* BigRationalSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CAC0161E077C3E0029E81C /* BigRationalSwiftTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B9CABFFC1E07760B0029E81C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 279A74481A16BED3008D8C51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9CABF9D1E076C7E0029E81C;
+			remoteInfo = OSXGMPFrameworkMac;
+		};
+		B9CAC00A1E077B250029E81C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 279A74481A16BED3008D8C51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9CABF9D1E076C7E0029E81C;
+			remoteInfo = OSXGMPFrameworkMac;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		279A744E1A16BED3008D8C51 /* CopyFiles */ = {
@@ -46,20 +67,6 @@
 
 /* Begin PBXFileReference section */
 		271FAF181A179D2B003E3660 /* gmp-man-6.0.0a.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "gmp-man-6.0.0a.pdf"; sourceTree = "<group>"; };
-		274854541A195BC000CA9364 /* BigFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigFloat.swift; sourceTree = "<group>"; };
-		274854551A195BC000CA9364 /* BigFloatError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigFloatError.h; sourceTree = "<group>"; };
-		274854561A195BC000CA9364 /* BigFloatError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigFloatError.m; sourceTree = "<group>"; };
-		274854571A195BC000CA9364 /* BigFloatObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigFloatObjC.h; sourceTree = "<group>"; };
-		274854581A195BC000CA9364 /* BigFloatObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigFloatObjC.m; sourceTree = "<group>"; };
-		2748545D1A195D3F00CA9364 /* BigRational.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigRational.swift; sourceTree = "<group>"; };
-		2748545E1A195D3F00CA9364 /* BigRationalError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigRationalError.h; sourceTree = "<group>"; };
-		2748545F1A195D3F00CA9364 /* BigRationalError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigRationalError.m; sourceTree = "<group>"; };
-		274854601A195D3F00CA9364 /* BigRationalObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigRationalObjC.h; sourceTree = "<group>"; };
-		274854611A195D3F00CA9364 /* BigRationalObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigRationalObjC.m; sourceTree = "<group>"; };
-		274854651A195E1800CA9364 /* BigFloatObjCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigFloatObjCTest.m; sourceTree = "<group>"; };
-		274854671A195E6B00CA9364 /* BigFloatSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigFloatSwiftTest.swift; sourceTree = "<group>"; };
-		274854691A195E9100CA9364 /* BigRationalObjCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigRationalObjCTest.m; sourceTree = "<group>"; };
-		2748546D1A195F2E00CA9364 /* BigRationalSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigRationalSwiftTest.swift; sourceTree = "<group>"; };
 		278DD3721A17E6B40092001A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		278DD3731A17E6BD0092001A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		279A74501A16BED3008D8C51 /* OSXGMP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSXGMP; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,17 +75,33 @@
 		279A745C1A16BF12008D8C51 /* libgmp.10.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgmp.10.dylib; sourceTree = "<group>"; };
 		279A745D1A16BF12008D8C51 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
 		279A745E1A16BF12008D8C51 /* libgmp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgmp.dylib; sourceTree = "<group>"; };
-		279A74601A16BF20008D8C51 /* BigInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigInt.swift; sourceTree = "<group>"; };
-		279A74611A16BF20008D8C51 /* BigIntError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigIntError.h; sourceTree = "<group>"; };
-		279A74621A16BF20008D8C51 /* BigIntError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigIntError.m; sourceTree = "<group>"; };
-		279A74631A16BF20008D8C51 /* BigIntObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigIntObjC.h; sourceTree = "<group>"; };
-		279A74641A16BF20008D8C51 /* BigIntObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigIntObjC.m; sourceTree = "<group>"; };
-		279A74711A16C16F008D8C51 /* OSXGMP-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSXGMP-Bridging-Header.h"; sourceTree = "<group>"; };
-		279A74761A16C32A008D8C51 /* OSXGMPTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXGMPTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		279A74791A16C32A008D8C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27B50AE61A19489D00F3EC58 /* COPYINGv3 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYINGv3; sourceTree = "<group>"; };
-		27F5E1A81A177C0C003DB35E /* BigIntSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigIntSwiftTest.swift; sourceTree = "<group>"; };
-		27F5E1AA1A177C9F003DB35E /* BigIntObjCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigIntObjCTest.m; sourceTree = "<group>"; };
+		B9CABF9E1E076C7E0029E81C /* OSXGMPFrameworkMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSXGMPFrameworkMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9CABFA01E076C7E0029E81C /* OSXGMPFrameworkMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSXGMPFrameworkMac.h; sourceTree = "<group>"; };
+		B9CABFA11E076C7E0029E81C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9CABFCE1E0770B20029E81C /* BigFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigFloat.swift; sourceTree = "<group>"; };
+		B9CABFCF1E0770B20029E81C /* BigFloatError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigFloatError.h; sourceTree = "<group>"; };
+		B9CABFD01E0770B20029E81C /* BigFloatError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigFloatError.m; sourceTree = "<group>"; };
+		B9CABFD11E0770B20029E81C /* BigFloatObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigFloatObjC.h; sourceTree = "<group>"; };
+		B9CABFD21E0770B20029E81C /* BigFloatObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigFloatObjC.m; sourceTree = "<group>"; };
+		B9CABFD41E0770B20029E81C /* BigInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigInt.swift; sourceTree = "<group>"; };
+		B9CABFD51E0770B20029E81C /* BigIntError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigIntError.h; sourceTree = "<group>"; };
+		B9CABFD61E0770B20029E81C /* BigIntError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigIntError.m; sourceTree = "<group>"; };
+		B9CABFD71E0770B20029E81C /* BigIntObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigIntObjC.h; sourceTree = "<group>"; };
+		B9CABFD81E0770B20029E81C /* BigIntObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigIntObjC.m; sourceTree = "<group>"; };
+		B9CABFDA1E0770B20029E81C /* BigRational.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigRational.swift; sourceTree = "<group>"; };
+		B9CABFDB1E0770B20029E81C /* BigRationalError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigRationalError.h; sourceTree = "<group>"; };
+		B9CABFDC1E0770B20029E81C /* BigRationalError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigRationalError.m; sourceTree = "<group>"; };
+		B9CABFDD1E0770B20029E81C /* BigRationalObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigRationalObjC.h; sourceTree = "<group>"; };
+		B9CABFDE1E0770B20029E81C /* BigRationalObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigRationalObjC.m; sourceTree = "<group>"; };
+		B9CAC0041E077B250029E81C /* OSXGMPFrameworkMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXGMPFrameworkMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9CAC0081E077B250029E81C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9CAC00F1E077B630029E81C /* BigIntObjCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigIntObjCTest.m; sourceTree = "<group>"; };
+		B9CAC0101E077B630029E81C /* BigIntSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigIntSwiftTest.swift; sourceTree = "<group>"; };
+		B9CAC0131E077C3E0029E81C /* BigFloatObjCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigFloatObjCTest.m; sourceTree = "<group>"; };
+		B9CAC0141E077C3E0029E81C /* BigFloatSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigFloatSwiftTest.swift; sourceTree = "<group>"; };
+		B9CAC0151E077C3E0029E81C /* BigRationalObjCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigRationalObjCTest.m; sourceTree = "<group>"; };
+		B9CAC0161E077C3E0029E81C /* BigRationalSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigRationalSwiftTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,54 +109,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				279A74681A16BF31008D8C51 /* libgmp.a in Frameworks */,
+				B9CABFB61E076D770029E81C /* OSXGMPFrameworkMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		279A74731A16C32A008D8C51 /* Frameworks */ = {
+		B9CABF9A1E076C7E0029E81C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27F5E1A01A177959003DB35E /* libgmp.a in Frameworks */,
+				B9CABFB51E076D4E0029E81C /* libgmp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9CAC0011E077B250029E81C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9CAC0091E077B250029E81C /* OSXGMPFrameworkMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		274854531A195BC000CA9364 /* BigFloat */ = {
-			isa = PBXGroup;
-			children = (
-				274854541A195BC000CA9364 /* BigFloat.swift */,
-				274854551A195BC000CA9364 /* BigFloatError.h */,
-				274854561A195BC000CA9364 /* BigFloatError.m */,
-				274854571A195BC000CA9364 /* BigFloatObjC.h */,
-				274854581A195BC000CA9364 /* BigFloatObjC.m */,
-			);
-			path = BigFloat;
-			sourceTree = "<group>";
-		};
-		2748545C1A195D3F00CA9364 /* BigRational */ = {
-			isa = PBXGroup;
-			children = (
-				2748545D1A195D3F00CA9364 /* BigRational.swift */,
-				2748545E1A195D3F00CA9364 /* BigRationalError.h */,
-				2748545F1A195D3F00CA9364 /* BigRationalError.m */,
-				274854601A195D3F00CA9364 /* BigRationalObjC.h */,
-				274854611A195D3F00CA9364 /* BigRationalObjC.m */,
-			);
-			path = BigRational;
-			sourceTree = "<group>";
-		};
 		279A74471A16BED3008D8C51 = {
 			isa = PBXGroup;
 			children = (
-				274854531A195BC000CA9364 /* BigFloat */,
-				279A745F1A16BF20008D8C51 /* BigInt */,
-				2748545C1A195D3F00CA9364 /* BigRational */,
+				B9CABFCC1E0770B20029E81C /* LibWrappers */,
 				279A745A1A16BF12008D8C51 /* GMP */,
 				279A74521A16BED3008D8C51 /* OSXGMP */,
-				279A74771A16C32A008D8C51 /* OSXGMPTest */,
+				B9CABF9F1E076C7E0029E81C /* OSXGMPFrameworkMac */,
+				B9CAC0051E077B250029E81C /* OSXGMPFrameworkMacTests */,
 				279A74511A16BED3008D8C51 /* Products */,
 				27B50AE61A19489D00F3EC58 /* COPYINGv3 */,
 				278DD3731A17E6BD0092001A /* LICENSE */,
@@ -145,7 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				279A74501A16BED3008D8C51 /* OSXGMP */,
-				279A74761A16C32A008D8C51 /* OSXGMPTest.xctest */,
+				B9CABF9E1E076C7E0029E81C /* OSXGMPFrameworkMac.framework */,
+				B9CAC0041E077B250029E81C /* OSXGMPFrameworkMacTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				279A74531A16BED3008D8C51 /* main.swift */,
-				279A74711A16C16F008D8C51 /* OSXGMP-Bridging-Header.h */,
 			);
 			path = OSXGMP;
 			sourceTree = "<group>";
@@ -171,41 +177,94 @@
 			path = GMP;
 			sourceTree = "<group>";
 		};
-		279A745F1A16BF20008D8C51 /* BigInt */ = {
+		B9CABF9F1E076C7E0029E81C /* OSXGMPFrameworkMac */ = {
 			isa = PBXGroup;
 			children = (
-				279A74601A16BF20008D8C51 /* BigInt.swift */,
-				279A74611A16BF20008D8C51 /* BigIntError.h */,
-				279A74621A16BF20008D8C51 /* BigIntError.m */,
-				279A74631A16BF20008D8C51 /* BigIntObjC.h */,
-				279A74641A16BF20008D8C51 /* BigIntObjC.m */,
+				B9CABFA01E076C7E0029E81C /* OSXGMPFrameworkMac.h */,
+				B9CABFA11E076C7E0029E81C /* Info.plist */,
+			);
+			path = OSXGMPFrameworkMac;
+			sourceTree = "<group>";
+		};
+		B9CABFCC1E0770B20029E81C /* LibWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				B9CABFCD1E0770B20029E81C /* BigFloat */,
+				B9CABFD31E0770B20029E81C /* BigInt */,
+				B9CABFD91E0770B20029E81C /* BigRational */,
+			);
+			path = LibWrappers;
+			sourceTree = "<group>";
+		};
+		B9CABFCD1E0770B20029E81C /* BigFloat */ = {
+			isa = PBXGroup;
+			children = (
+				B9CABFCE1E0770B20029E81C /* BigFloat.swift */,
+				B9CABFCF1E0770B20029E81C /* BigFloatError.h */,
+				B9CABFD01E0770B20029E81C /* BigFloatError.m */,
+				B9CABFD11E0770B20029E81C /* BigFloatObjC.h */,
+				B9CABFD21E0770B20029E81C /* BigFloatObjC.m */,
+			);
+			path = BigFloat;
+			sourceTree = "<group>";
+		};
+		B9CABFD31E0770B20029E81C /* BigInt */ = {
+			isa = PBXGroup;
+			children = (
+				B9CABFD41E0770B20029E81C /* BigInt.swift */,
+				B9CABFD51E0770B20029E81C /* BigIntError.h */,
+				B9CABFD61E0770B20029E81C /* BigIntError.m */,
+				B9CABFD71E0770B20029E81C /* BigIntObjC.h */,
+				B9CABFD81E0770B20029E81C /* BigIntObjC.m */,
 			);
 			path = BigInt;
 			sourceTree = "<group>";
 		};
-		279A74771A16C32A008D8C51 /* OSXGMPTest */ = {
+		B9CABFD91E0770B20029E81C /* BigRational */ = {
 			isa = PBXGroup;
 			children = (
-				274854651A195E1800CA9364 /* BigFloatObjCTest.m */,
-				274854671A195E6B00CA9364 /* BigFloatSwiftTest.swift */,
-				27F5E1AA1A177C9F003DB35E /* BigIntObjCTest.m */,
-				27F5E1A81A177C0C003DB35E /* BigIntSwiftTest.swift */,
-				274854691A195E9100CA9364 /* BigRationalObjCTest.m */,
-				2748546D1A195F2E00CA9364 /* BigRationalSwiftTest.swift */,
-				279A74781A16C32A008D8C51 /* Supporting Files */,
+				B9CABFDA1E0770B20029E81C /* BigRational.swift */,
+				B9CABFDB1E0770B20029E81C /* BigRationalError.h */,
+				B9CABFDC1E0770B20029E81C /* BigRationalError.m */,
+				B9CABFDD1E0770B20029E81C /* BigRationalObjC.h */,
+				B9CABFDE1E0770B20029E81C /* BigRationalObjC.m */,
 			);
-			path = OSXGMPTest;
+			path = BigRational;
 			sourceTree = "<group>";
 		};
-		279A74781A16C32A008D8C51 /* Supporting Files */ = {
+		B9CAC0051E077B250029E81C /* OSXGMPFrameworkMacTests */ = {
 			isa = PBXGroup;
 			children = (
-				279A74791A16C32A008D8C51 /* Info.plist */,
+				B9CAC0131E077C3E0029E81C /* BigFloatObjCTest.m */,
+				B9CAC0141E077C3E0029E81C /* BigFloatSwiftTest.swift */,
+				B9CAC0151E077C3E0029E81C /* BigRationalObjCTest.m */,
+				B9CAC0161E077C3E0029E81C /* BigRationalSwiftTest.swift */,
+				B9CAC00F1E077B630029E81C /* BigIntObjCTest.m */,
+				B9CAC0101E077B630029E81C /* BigIntSwiftTest.swift */,
+				B9CAC0081E077B250029E81C /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = OSXGMPFrameworkMacTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B9CABF9B1E076C7E0029E81C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9CABFFB1E07746D0029E81C /* gmp.h in Headers */,
+				B9CABFAE1E076C7E0029E81C /* OSXGMPFrameworkMac.h in Headers */,
+				B9CABFF51E0774560029E81C /* BigFloatError.h in Headers */,
+				B9CABFF61E0774560029E81C /* BigFloatObjC.h in Headers */,
+				B9CABFF71E0774560029E81C /* BigIntError.h in Headers */,
+				B9CABFF81E0774560029E81C /* BigIntObjC.h in Headers */,
+				B9CABFF91E0774560029E81C /* BigRationalError.h in Headers */,
+				B9CABFFA1E0774560029E81C /* BigRationalObjC.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		279A744F1A16BED3008D8C51 /* OSXGMP */ = {
@@ -219,27 +278,47 @@
 			buildRules = (
 			);
 			dependencies = (
+				B9CABFFD1E07760B0029E81C /* PBXTargetDependency */,
 			);
 			name = OSXGMP;
 			productName = OSXGMP;
 			productReference = 279A74501A16BED3008D8C51 /* OSXGMP */;
 			productType = "com.apple.product-type.tool";
 		};
-		279A74751A16C32A008D8C51 /* OSXGMPTest */ = {
+		B9CABF9D1E076C7E0029E81C /* OSXGMPFrameworkMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 279A747C1A16C32A008D8C51 /* Build configuration list for PBXNativeTarget "OSXGMPTest" */;
+			buildConfigurationList = B9CABFAF1E076C7E0029E81C /* Build configuration list for PBXNativeTarget "OSXGMPFrameworkMac" */;
 			buildPhases = (
-				279A74721A16C32A008D8C51 /* Sources */,
-				279A74731A16C32A008D8C51 /* Frameworks */,
-				279A74741A16C32A008D8C51 /* Resources */,
+				B9CABF991E076C7E0029E81C /* Sources */,
+				B9CABF9A1E076C7E0029E81C /* Frameworks */,
+				B9CABF9B1E076C7E0029E81C /* Headers */,
+				B9CABF9C1E076C7E0029E81C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = OSXGMPTest;
-			productName = OSXGMPTest;
-			productReference = 279A74761A16C32A008D8C51 /* OSXGMPTest.xctest */;
+			name = OSXGMPFrameworkMac;
+			productName = OSXGMPFrameworkMac;
+			productReference = B9CABF9E1E076C7E0029E81C /* OSXGMPFrameworkMac.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B9CAC0031E077B250029E81C /* OSXGMPFrameworkMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9CAC00C1E077B250029E81C /* Build configuration list for PBXNativeTarget "OSXGMPFrameworkMacTests" */;
+			buildPhases = (
+				B9CAC0001E077B250029E81C /* Sources */,
+				B9CAC0011E077B250029E81C /* Frameworks */,
+				B9CAC0021E077B250029E81C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9CAC00B1E077B250029E81C /* PBXTargetDependency */,
+			);
+			name = OSXGMPFrameworkMacTests;
+			productName = OSXGMPFrameworkMacTests;
+			productReference = B9CAC0041E077B250029E81C /* OSXGMPFrameworkMacTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +327,7 @@
 		279A74481A16BED3008D8C51 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Otto van Verseveld";
 				TargetAttributes = {
@@ -256,9 +335,14 @@
 						CreatedOnToolsVersion = 6.1;
 						LastSwiftMigration = 0820;
 					};
-					279A74751A16C32A008D8C51 = {
-						CreatedOnToolsVersion = 6.1;
+					B9CABF9D1E076C7E0029E81C = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+					B9CAC0031E077B250029E81C = {
+						CreatedOnToolsVersion = 8.2;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -275,18 +359,24 @@
 			projectRoot = "";
 			targets = (
 				279A744F1A16BED3008D8C51 /* OSXGMP */,
-				279A74751A16C32A008D8C51 /* OSXGMPTest */,
+				B9CABF9D1E076C7E0029E81C /* OSXGMPFrameworkMac */,
+				B9CAC0031E077B250029E81C /* OSXGMPFrameworkMacTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		279A74741A16C32A008D8C51 /* Resources */ = {
+		B9CABF9C1E076C7E0029E81C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				271FAF191A179D2B003E3660 /* gmp-man-6.0.0a.pdf in Resources */,
-				27B50AE71A19489D00F3EC58 /* COPYINGv3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9CAC0021E077B250029E81C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,36 +387,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				279A74651A16BF20008D8C51 /* BigInt.swift in Sources */,
-				279A74661A16BF20008D8C51 /* BigIntError.m in Sources */,
-				279A74671A16BF20008D8C51 /* BigIntObjC.m in Sources */,
-				279A74541A16BED3008D8C51 /* main.swift in Sources */,
+				B9CABFB71E076E540029E81C /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		279A74721A16C32A008D8C51 /* Sources */ = {
+		B9CABF991E076C7E0029E81C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2748546E1A195F2E00CA9364 /* BigRationalSwiftTest.swift in Sources */,
-				27F5E1A11A177965003DB35E /* BigInt.swift in Sources */,
-				27F5E1AB1A177C9F003DB35E /* BigIntObjCTest.m in Sources */,
-				274854641A195D3F00CA9364 /* BigRationalObjC.m in Sources */,
-				27F5E1A21A177968003DB35E /* BigIntError.m in Sources */,
-				2748545A1A195BC000CA9364 /* BigFloatError.m in Sources */,
-				274854591A195BC000CA9364 /* BigFloat.swift in Sources */,
-				274854631A195D3F00CA9364 /* BigRationalError.m in Sources */,
-				274854661A195E1800CA9364 /* BigFloatObjCTest.m in Sources */,
-				274854621A195D3F00CA9364 /* BigRational.swift in Sources */,
-				274854681A195E6B00CA9364 /* BigFloatSwiftTest.swift in Sources */,
-				2748546A1A195E9100CA9364 /* BigRationalObjCTest.m in Sources */,
-				27F5E1A31A17796B003DB35E /* BigIntObjC.m in Sources */,
-				27F5E1A91A177C0C003DB35E /* BigIntSwiftTest.swift in Sources */,
-				2748545B1A195BC000CA9364 /* BigFloatObjC.m in Sources */,
+				B9CABFE41E0770B20029E81C /* BigInt.swift in Sources */,
+				B9CABFEF1E0773350029E81C /* BigIntError.m in Sources */,
+				B9CABFF01E0773380029E81C /* BigIntObjC.m in Sources */,
+				B9CABFDF1E0770B20029E81C /* BigFloat.swift in Sources */,
+				B9CABFF31E0773500029E81C /* BigFloatError.m in Sources */,
+				B9CABFF41E0773530029E81C /* BigFloatObjC.m in Sources */,
+				B9CABFE91E0770B20029E81C /* BigRational.swift in Sources */,
+				B9CABFF11E0773440029E81C /* BigRationalError.m in Sources */,
+				B9CABFF21E0773470029E81C /* BigRationalObjC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9CAC0001E077B250029E81C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9CAC01A1E077C3E0029E81C /* BigRationalSwiftTest.swift in Sources */,
+				B9CAC0111E077B630029E81C /* BigIntObjCTest.m in Sources */,
+				B9CAC0191E077C3E0029E81C /* BigRationalObjCTest.m in Sources */,
+				B9CAC0171E077C3E0029E81C /* BigFloatObjCTest.m in Sources */,
+				B9CAC0121E077B630029E81C /* BigIntSwiftTest.swift in Sources */,
+				B9CAC0181E077C3E0029E81C /* BigFloatSwiftTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B9CABFFD1E07760B0029E81C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9CABF9D1E076C7E0029E81C /* OSXGMPFrameworkMac */;
+			targetProxy = B9CABFFC1E07760B0029E81C /* PBXContainerItemProxy */;
+		};
+		B9CAC00B1E077B250029E81C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9CABF9D1E076C7E0029E81C /* OSXGMPFrameworkMac */;
+			targetProxy = B9CAC00A1E077B250029E81C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		279A74551A16BED3008D8C51 /* Debug */ = {
@@ -366,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -399,13 +506,14 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -416,12 +524,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD_NO_PIE = YES;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/GMP",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -430,60 +536,109 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD_NO_PIE = YES;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/GMP",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		279A747D1A16C32A008D8C51 /* Debug */ = {
+		B9CABFB01E076C7E0029E81C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OSXGMPTest/Info.plist;
-				LD_NO_PIE = YES;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = OSXGMPFrameworkMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GMP",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "nl.tofh.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.webbdev.OSXGMPFrameworkMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B9CABFB11E076C7E0029E81C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = OSXGMPFrameworkMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GMP",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.webbdev.OSXGMPFrameworkMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B9CAC00D1E077B250029E81C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = OSXGMPFrameworkMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.webbdev.OSXGMPFrameworkMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		279A747E1A16C32A008D8C51 /* Release */ = {
+		B9CAC00E1E077B250029E81C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OSXGMPTest/Info.plist;
-				LD_NO_PIE = YES;
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = OSXGMPFrameworkMacTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/GMP",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "nl.tofh.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.webbdev.OSXGMPFrameworkMacTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OSXGMP/OSXGMP-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -509,14 +664,21 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		279A747C1A16C32A008D8C51 /* Build configuration list for PBXNativeTarget "OSXGMPTest" */ = {
+		B9CABFAF1E076C7E0029E81C /* Build configuration list for PBXNativeTarget "OSXGMPFrameworkMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				279A747D1A16C32A008D8C51 /* Debug */,
-				279A747E1A16C32A008D8C51 /* Release */,
+				B9CABFB01E076C7E0029E81C /* Debug */,
+				B9CABFB11E076C7E0029E81C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+		};
+		B9CAC00C1E077B250029E81C /* Build configuration list for PBXNativeTarget "OSXGMPFrameworkMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9CAC00D1E077B250029E81C /* Debug */,
+				B9CAC00E1E077B250029E81C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

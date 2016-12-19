@@ -24,7 +24,7 @@ along with OSXGMP.  If not, see <http://www.gnu.org/licenses/>.
 
 import Foundation
 
-enum BigIntError: Error {
+public enum BigIntError: Error {
     case EmptyStringNumber
     case InvalidBaseNumber
     case InvalidNumberFormat
@@ -36,32 +36,32 @@ open class BigInt : BigIntObjC {
     }
     
     //MARK: - GMP Paragraph 5.1 Initialization Functions.
-    override init() {
+    public override init() {
         super.init()
     }
-    init(nr: BigIntObjC) {
+    public init(nr: BigIntObjC) {
         super.init(bigInt: nr)
     }
-    init(doubleNr: Double) {
+    public init(doubleNr: Double) {
         super.init(double: doubleNr)
     }
-    init(intNr: Int) {
+    public init(intNr: Int) {
         super.init(sLong: intNr)
     }
-    init(uintNr: UInt) {
+    public init(uintNr: UInt) {
         super.init(uLong: uintNr)
     }
     fileprivate init(nr: String, base: Int32) throws {
         super.init();
         try self.setStringAndBase(nr, base: base)
     }
-    convenience init(stringNr: String, error: NSErrorPointer) throws {
+    public convenience init(stringNr: String, error: NSErrorPointer) throws {
         try self.init(nr: stringNr, base: 10)
     }
-    convenience init(stringNr: String) throws {
+    public convenience init(stringNr: String) throws {
         try self.init(nr: stringNr, base: 10)
     }
-    convenience init(stringNr: String, base: Int32) throws {
+    public convenience init(stringNr: String, base: Int32) throws {
         try self.init(nr: stringNr, base: base)
     }
     fileprivate func setStringAndBase(_ stringNr: String, base: Int32) throws {
@@ -82,10 +82,10 @@ open class BigInt : BigIntObjC {
     //=> see 5.1 above!
     
     //MARK: - GMP Paragraph 5.4 Conversion Functions.
-    func toInt() -> Int {
+    public func toInt() -> Int {
         return (Int)(toSLong())
     }
-    func toUInt() -> UInt {
+    public func toUInt() -> UInt {
         return (UInt)(toULong())
     }
     
@@ -153,7 +153,7 @@ open class BigInt : BigIntObjC {
 //MARK: -- Exponentiative
 //MARK: ---- (BIOP_07) Power:
 infix operator ** : BitwiseShiftPrecedence
-func ** (lhs: BigInt, rhs: UInt) -> BigInt {
+public func ** (lhs: BigInt, rhs: UInt) -> BigInt {
     return BigInt(nr: BigIntObjC.power(lhs, exp: rhs))
 }
 //- (BIOP_08) Bitwise left shift: infix operator << BitwiseShiftPrecedence
@@ -162,53 +162,53 @@ func ** (lhs: BigInt, rhs: UInt) -> BigInt {
 //MARK: -- Multiplicative
 //MARK: ---- (BIOP_10) Multiply:
 infix operator * : MultiplicationPrecedence
-func * (lhs: BigInt, rhs: BigInt) -> BigInt {
+public func * (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mul(lhs, op2: rhs))
 }
-func * (lhs: BigInt, rhs: Int) -> BigInt {
+public func * (lhs: BigInt, rhs: Int) -> BigInt {
     return BigInt(nr: BigIntObjC.mulSLong(lhs, op2: rhs))
 }
-func * (lhs: BigInt, rhs: UInt) -> BigInt {
+public func * (lhs: BigInt, rhs: UInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mulULong(lhs, op2: rhs))
 }
-func * (lhs: Int, rhs: BigInt) -> BigInt {
+public func * (lhs: Int, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mulSLong(rhs, op2: lhs))
 }
-func * (lhs: UInt, rhs: BigInt) -> BigInt {
+public func * (lhs: UInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mulULong(rhs, op2: lhs))
 }
 //MARK: ==-- (BIOP_11) Divide:
 infix operator / : MultiplicationPrecedence
-func / (lhs: BigInt, rhs: BigInt) -> BigInt {
+public func / (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.div(lhs, d: rhs))
 }
-func / (lhs: BigInt, rhs: Int) -> BigInt {
+public func / (lhs: BigInt, rhs: Int) -> BigInt {
     return BigInt(nr: BigIntObjC.divSLong(lhs, d: rhs))
 }
-func / (lhs: BigInt, rhs: UInt) -> BigInt {
+public func / (lhs: BigInt, rhs: UInt) -> BigInt {
     return BigInt(nr: BigIntObjC.divULong(lhs, d: rhs))
 }
-func / (lhs: Int, rhs: BigInt) -> BigInt {
+public func / (lhs: Int, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.div(BigInt(intNr: lhs), d: rhs))
 }
-func / (lhs: UInt, rhs: BigInt) -> BigInt {
+public func / (lhs: UInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.div(BigInt(uintNr: lhs), d: rhs))
 }
 //MARK: ==-- (BIOP_12) Remainder:
 infix operator % : MultiplicationPrecedence
-func % (lhs: BigInt, rhs: BigInt) -> BigInt {
+public func % (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mod(lhs, d: rhs))
 }
-func % (lhs: BigInt, rhs: Int) -> BigInt {
+public func % (lhs: BigInt, rhs: Int) -> BigInt {
     return BigInt(nr: BigIntObjC.mod(lhs, d: BigInt(intNr: rhs)))
 }
-func % (lhs: BigInt, rhs: UInt) -> BigInt {
+public func % (lhs: BigInt, rhs: UInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mod(lhs, d: BigInt(uintNr: rhs)))
 }
-func % (lhs: Int, rhs: BigInt) -> BigInt {
+public func % (lhs: Int, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mod(BigInt(intNr: lhs), d: rhs))
 }
-func % (lhs: UInt, rhs: BigInt) -> BigInt {
+public func % (lhs: UInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mod(BigInt(uintNr: lhs), d: rhs))
 }
 //- (BIOP_13) Multiply, ignoring overflow: infix operator &* MultiplicationPrecedence
@@ -219,38 +219,38 @@ func % (lhs: UInt, rhs: BigInt) -> BigInt {
 //MARK: -- Additive
 //MARK: ---- (BIOP_17) Add:
 infix operator + : AdditionPrecedence
-func + (lhs: BigInt, rhs: BigInt) -> BigInt {
+public func + (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.add(lhs, op2: rhs))
 }
-func + (lhs: BigInt, rhs: Int) -> BigInt {
+public func + (lhs: BigInt, rhs: Int) -> BigInt {
     return BigInt(nr: BigIntObjC.addSLong(lhs, op2: rhs))
 }
-func + (lhs: BigInt, rhs: UInt) -> BigInt {
+public func + (lhs: BigInt, rhs: UInt) -> BigInt {
     return BigInt(nr: BigIntObjC.addULong(lhs, op2: rhs))
 }
-func + (lhs: Int, rhs: BigInt) -> BigInt {
+public func + (lhs: Int, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.addSLong(rhs, op2: lhs))
 }
-func + (lhs: UInt, rhs: BigInt) -> BigInt {
+public func + (lhs: UInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.addULong(rhs, op2: lhs))
 }
 //MARK: ---- (BIOP_18) Substract:
 infix operator - : AdditionPrecedence
-func - (lhs: BigInt, rhs: BigInt) -> BigInt {
+public func - (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.sub(lhs, op2: rhs))
 }
-func - (lhs: BigInt, rhs: Int) -> BigInt {
+public func - (lhs: BigInt, rhs: Int) -> BigInt {
     return BigInt(nr: BigIntObjC.subSLong(lhs, op2: rhs))
 }
-func - (lhs: BigInt, rhs: UInt) -> BigInt {
+public func - (lhs: BigInt, rhs: UInt) -> BigInt {
     return BigInt(nr: BigIntObjC.subULong(lhs, op2: rhs))
 }
-func - (lhs: Int, rhs: BigInt) -> BigInt {
+public func - (lhs: Int, rhs: BigInt) -> BigInt {
     let res = BigInt(nr: BigIntObjC.subSLong(rhs, op2: lhs))
     res.neg()
     return res
 }
-func - (lhs: UInt, rhs: BigInt) -> BigInt {
+public func - (lhs: UInt, rhs: BigInt) -> BigInt {
     let res = BigInt(nr: BigIntObjC.subULong(rhs, op2: lhs))
     res.neg()
     return res
@@ -271,104 +271,104 @@ func - (lhs: UInt, rhs: BigInt) -> BigInt {
 //MARK: -- Comparative
 //MARK: ---- (BIOP_27) Less than:
 infix operator < : ComparisonPrecedence
-func < (lhs: BigInt, rhs: BigInt) -> Bool {
+public func < (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) < 0
 }
-func < (lhs: BigInt, rhs: Int) -> Bool {
+public func < (lhs: BigInt, rhs: Int) -> Bool {
     return lhs.compare(withSLong: rhs) < 0
 }
-func < (lhs: BigInt, rhs: UInt) -> Bool {
+public func < (lhs: BigInt, rhs: UInt) -> Bool {
     return lhs.compare(withULong: rhs) < 0
 }
-func < (lhs: Int, rhs: BigInt) -> Bool {
+public func < (lhs: Int, rhs: BigInt) -> Bool {
     return rhs.compare(withSLong: lhs) > 0
 }
-func < (lhs: UInt, rhs: BigInt) -> Bool {
+public func < (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) > 0
 }
 //MARK: ---- (BIOP_28) Less than or equal:
 infix operator <= : ComparisonPrecedence
-func <= (lhs: BigInt, rhs: BigInt) -> Bool {
+public func <= (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) <= 0
 }
-func <= (lhs: BigInt, rhs: Int) -> Bool {
+public func <= (lhs: BigInt, rhs: Int) -> Bool {
     return lhs.compare(withSLong: rhs) <= 0
 }
-func <= (lhs: BigInt, rhs: UInt) -> Bool {
+public func <= (lhs: BigInt, rhs: UInt) -> Bool {
     return lhs.compare(withULong: rhs) <= 0
 }
-func <= (lhs: Int, rhs: BigInt) -> Bool {
+public func <= (lhs: Int, rhs: BigInt) -> Bool {
     return rhs.compare(withSLong: lhs) > 0
 }
-func <= (lhs: UInt, rhs: BigInt) -> Bool {
+public func <= (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) > 0
 }
 //MARK: ---- (BIOP_29) Greater than:
 infix operator > : ComparisonPrecedence
-func > (lhs: BigInt, rhs: BigInt) -> Bool {
+public func > (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) > 0
 }
-func > (lhs: BigInt, rhs: Int) -> Bool {
+public func > (lhs: BigInt, rhs: Int) -> Bool {
     return lhs.compare(withSLong: rhs) > 0
 }
-func > (lhs: BigInt, rhs: UInt) -> Bool {
+public func > (lhs: BigInt, rhs: UInt) -> Bool {
     return lhs.compare(withULong: rhs) > 0
 }
-func > (lhs: Int, rhs: BigInt) -> Bool {
+public func > (lhs: Int, rhs: BigInt) -> Bool {
     return rhs.compare(withSLong: lhs) < 0
 }
-func > (lhs: UInt, rhs: BigInt) -> Bool {
+public func > (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) < 0
 }
 //MARK: ---- (BIOP_30) Greater than or equal:
 infix operator >= : ComparisonPrecedence
-func >= (lhs: BigInt, rhs: BigInt) -> Bool {
+public func >= (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) >= 0
 }
-func >= (lhs: BigInt, rhs: Int) -> Bool {
+public func >= (lhs: BigInt, rhs: Int) -> Bool {
     return lhs.compare(withSLong: rhs) >= 0
 }
-func >= (lhs: BigInt, rhs: UInt) -> Bool {
+public func >= (lhs: BigInt, rhs: UInt) -> Bool {
     return lhs.compare(withULong: rhs) >= 0
 }
-func >= (lhs: Int, rhs: BigInt) -> Bool {
+public func >= (lhs: Int, rhs: BigInt) -> Bool {
     return rhs.compare(withSLong: lhs) < 0
 }
-func >= (lhs: UInt, rhs: BigInt) -> Bool {
+public func >= (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) < 0
 }
 //MARK: ---- (BIOP_31) Equal:
 infix operator == : ComparisonPrecedence
-func == (lhs: BigInt, rhs: BigInt) -> Bool {
+public func == (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) == 0
 }
-func == (lhs: BigInt, rhs: Int) -> Bool {
+public func == (lhs: BigInt, rhs: Int) -> Bool {
     return lhs.compare(withSLong: rhs) == 0
 }
-func == (lhs: BigInt, rhs: UInt) -> Bool {
+public func == (lhs: BigInt, rhs: UInt) -> Bool {
     return lhs.compare(withULong: rhs) == 0
 }
-func == (lhs: Int, rhs: BigInt) -> Bool {
+public func == (lhs: Int, rhs: BigInt) -> Bool {
     return rhs.compare(withSLong: lhs) == 0
 }
-func == (lhs: UInt, rhs: BigInt) -> Bool {
+public func == (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) == 0
 }
 //MARK: ---- (BIOP_32) Not equal:
 infix operator != : ComparisonPrecedence
-func != (lhs: BigInt, rhs: BigInt) -> Bool {
+public func != (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) != 0
 }
-func != (lhs: BigInt, rhs: Int) -> Bool {
+public func != (lhs: BigInt, rhs: Int) -> Bool {
     return lhs.compare(withSLong: rhs) != 0
 }
-func != (lhs: BigInt, rhs: UInt) -> Bool {
+public func != (lhs: BigInt, rhs: UInt) -> Bool {
     return lhs.compare(withULong: rhs) != 0
 }
-func != (lhs: Int, rhs: BigInt) -> Bool {
+public func != (lhs: Int, rhs: BigInt) -> Bool {
     return rhs.compare(withSLong: lhs) != 0
 }
-func != (lhs: UInt, rhs: BigInt) -> Bool {
+public func != (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) != 0
 }
 //- (BIOP_33) Identical: infix operator === ComparisonPrecedence
@@ -392,31 +392,31 @@ func != (lhs: UInt, rhs: BigInt) -> Bool {
 //X (BIOP_40) Assign: infix operator = AssignmentPrecedence
 //MARK: ---- (BIOP_41) Multiply and assign:
 infix operator *= : AssignmentPrecedence
-func *= (lhs: inout BigInt, rhs: BigIntObjC) {
+public func *= (lhs: inout BigInt, rhs: BigIntObjC) {
     return lhs.mul(rhs)
 }
-func *= (lhs: inout BigInt, rhs: Int) {
+public func *= (lhs: inout BigInt, rhs: Int) {
     return lhs.mulSLong(rhs)
 }
-func *= (lhs: inout BigInt, rhs: UInt) {
+public func *= (lhs: inout BigInt, rhs: UInt) {
     return lhs.mulULong(rhs)
 }
 //- (BIOP_42) Divide and assign: infix operator /= AssignmentPrecedence
 //- (BIOP_43) Remainder and assign: infix operator %= AssignmentPrecedence
 //MARK: ---- (BIOP_44) Add and assign:
 infix operator += : AssignmentPrecedence
-func += (lhs: inout BigInt, rhs: BigIntObjC) {
+public func += (lhs: inout BigInt, rhs: BigIntObjC) {
     return lhs.add(rhs)
 }
-func += (lhs: inout BigInt, rhs: Int) {
+public func += (lhs: inout BigInt, rhs: Int) {
     return lhs.addSLong(rhs)
 }
-func += (lhs: inout BigInt, rhs: UInt) {
+public func += (lhs: inout BigInt, rhs: UInt) {
     return lhs.addULong(rhs)
 }
 //MARK: ---- (BIOP_45) Substract and assign:
 infix operator -= : AssignmentPrecedence
-func -= (lhs: inout BigInt, rhs: UInt) {
+public func -= (lhs: inout BigInt, rhs: UInt) {
     return lhs.subULong(rhs)
 }
 //- (BIOP_46) Power and assign: infix operator **= AssignmentPrecedence
