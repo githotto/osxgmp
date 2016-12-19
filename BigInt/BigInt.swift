@@ -156,12 +156,12 @@ infix operator ** : BitwiseShiftPrecedence
 func ** (lhs: BigInt, rhs: UInt) -> BigInt {
     return BigInt(nr: BigIntObjC.power(lhs, exp: rhs))
 }
-//- (BIOP_08) Bitwise left shift: infix operator << { associativity left precedence 160 }
-//- (BIOP_09) Bitwise right shift: infix operator >> { associativity left precedence 160 }
+//- (BIOP_08) Bitwise left shift: infix operator << BitwiseShiftPrecedence
+//- (BIOP_09) Bitwise right shift: infix operator >> BitwiseShiftPrecedence
 
 //MARK: -- Multiplicative
 //MARK: ---- (BIOP_10) Multiply:
-infix operator * : MultiplicationPrecedence//{ associativity left precedence 150 }
+infix operator * : MultiplicationPrecedence
 func * (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mul(lhs, op2: rhs))
 }
@@ -178,7 +178,7 @@ func * (lhs: UInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mulULong(rhs, op2: lhs))
 }
 //MARK: ==-- (BIOP_11) Divide:
-infix operator / : MultiplicationPrecedence //{ associativity left precedence 150 }
+infix operator / : MultiplicationPrecedence
 func / (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.div(lhs, d: rhs))
 }
@@ -195,7 +195,7 @@ func / (lhs: UInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.div(BigInt(uintNr: lhs), d: rhs))
 }
 //MARK: ==-- (BIOP_12) Remainder:
-infix operator % : MultiplicationPrecedence //{ associativity left precedence 150 }
+infix operator % : MultiplicationPrecedence
 func % (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mod(lhs, d: rhs))
 }
@@ -211,14 +211,14 @@ func % (lhs: Int, rhs: BigInt) -> BigInt {
 func % (lhs: UInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mod(BigInt(uintNr: lhs), d: rhs))
 }
-//- (BIOP_13) Multiply, ignoring overflow: infix operator &* { associativity left precedence 150 }
-//- (BIOP_14) Divide, ignoring overflow: infix operator &/ { associativity left precedence 150 }
-//- (BIOP_15) Remainder, ignoring overflow: infix operator &% { associativity left precedence 150 }
-//- (BIOP_16) Bitwise AND: infix operator & { associativity left precedence 150 }
+//- (BIOP_13) Multiply, ignoring overflow: infix operator &* MultiplicationPrecedence
+//- (BIOP_14) Divide, ignoring overflow: infix operator &/ MultiplicationPrecedence
+//- (BIOP_15) Remainder, ignoring overflow: infix operator &% MultiplicationPrecedence
+//- (BIOP_16) Bitwise AND: infix operator & MultiplicationPrecedence
 
 //MARK: -- Additive
 //MARK: ---- (BIOP_17) Add:
-infix operator + : AdditionPrecedence //{ associativity left precedence 140 }
+infix operator + : AdditionPrecedence
 func + (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.add(lhs, op2: rhs))
 }
@@ -235,7 +235,7 @@ func + (lhs: UInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.addULong(rhs, op2: lhs))
 }
 //MARK: ---- (BIOP_18) Substract:
-infix operator - : AdditionPrecedence // { associativity left precedence 140 }
+infix operator - : AdditionPrecedence
 func - (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.sub(lhs, op2: rhs))
 }
@@ -255,22 +255,22 @@ func - (lhs: UInt, rhs: BigInt) -> BigInt {
     res.neg()
     return res
 }
-//- (BIOP_19) Add with overflow: infix operator &+ { associativity left precedence 140 }
-//- (BIOP_20) Substract with overflow: infix operator &- { associativity left precedence 140 }
-//- (BIOP_21) Bitwise OR: infix operator | { associativity left precedence 140 }
-//- (BIOP_22) Bitwise XOR: infix operator ^ { associativity left precedence 140 }
+//- (BIOP_19) Add with overflow: infix operator &+ AdditionPrecedence
+//- (BIOP_20) Substract with overflow: infix operator &- AdditionPrecedence
+//- (BIOP_21) Bitwise OR: infix operator | AdditionPrecedence
+//- (BIOP_22) Bitwise XOR: infix operator ^ AdditionPrecedence
 
 //MARK: -- Range
-//- (BIOP_23) Half-open range: infix operator ..< { associativity none precedence 135 }
-//- (BIOP_24) Closed range: infix operator ... { associativity none precedence 135 }
+//- (BIOP_23) Half-open range: infix operator ..< RangeFormationPrecedence
+//- (BIOP_24) Closed range: infix operator ... RangeFormationPrecedence
 
 //MARK: -- Cast
-//X (BIOP_25) Type check: infix operator is { associativity none precedence 132 }
-//X (BIOP_26) Type cast: infix operator as { associativity none precedence 132 }
+//X (BIOP_25) Type check: infix operator is CastingPrecedence
+//X (BIOP_26) Type cast: infix operator as CastingPrecedence
 
 //MARK: -- Comparative
 //MARK: ---- (BIOP_27) Less than:
-infix operator < : ComparisonPrecedence //{ associativity none precedence 130 }
+infix operator < : ComparisonPrecedence
 func < (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) < 0
 }
@@ -287,7 +287,7 @@ func < (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) > 0
 }
 //MARK: ---- (BIOP_28) Less than or equal:
-infix operator <= : ComparisonPrecedence //{ associativity none precedence 130 }
+infix operator <= : ComparisonPrecedence
 func <= (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) <= 0
 }
@@ -304,7 +304,7 @@ func <= (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) > 0
 }
 //MARK: ---- (BIOP_29) Greater than:
-infix operator > : ComparisonPrecedence //{ associativity none precedence 130 }
+infix operator > : ComparisonPrecedence
 func > (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) > 0
 }
@@ -321,7 +321,7 @@ func > (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) < 0
 }
 //MARK: ---- (BIOP_30) Greater than or equal:
-infix operator >= : ComparisonPrecedence //{ associativity none precedence 130 }
+infix operator >= : ComparisonPrecedence
 func >= (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) >= 0
 }
@@ -338,7 +338,7 @@ func >= (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) < 0
 }
 //MARK: ---- (BIOP_31) Equal:
-infix operator == : ComparisonPrecedence //{ associativity none precedence 130 }
+infix operator == : ComparisonPrecedence
 func == (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) == 0
 }
@@ -355,7 +355,7 @@ func == (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) == 0
 }
 //MARK: ---- (BIOP_32) Not equal:
-infix operator != : ComparisonPrecedence //{ associativity none precedence 130 }
+infix operator != : ComparisonPrecedence
 func != (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) != 0
 }
@@ -371,26 +371,27 @@ func != (lhs: Int, rhs: BigInt) -> Bool {
 func != (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) != 0
 }
-//- (BIOP_33) Identical: infix operator === { associativity none precedence 130 }
-//- (BIOP_34) Not identical: infix operator !== { associativity none precedence 130 }
-//- (BIOP_35) Pattern match: infix operator ~= { associativity none precedence 130 }
+//- (BIOP_33) Identical: infix operator === ComparisonPrecedence
+//- (BIOP_34) Not identical: infix operator !== ComparisonPrecedence
+//- (BIOP_35) Pattern match: infix operator ~= ComparisonPrecedence
 
 //MARK: -- Conjunctive
-//- (BIOP_36) Logical AND: infix operator && { associativity left precedence 120 }
+//- (BIOP_36) Logical AND: infix operator && LogicalConjunctionPrecedence
 
 //MARK: -- Disjunctive
-//- (BIOP_37) Logical OR: infix operator || { associativity left precedence 110 }
+//- (BIOP_37) Logical OR: infix operator || LogicalConjunctionPrecedence
 
 //MARK: -- Nil Coalescing
-//X (BIOP_38) Nil coalescing: infix operator ?? { associativity right precedence 110 }
+// Note that despite the ordering in the file, NilCoalescingPrecedence fits above the ComparisonPrecedence
+//X (BIOP_38) Nil coalescing: infix operator ?? NilCoalescingPrecedence
 
 //MARK: -- Ternary Conditional
-//X (BIOP_39) Ternary conditional: infix operator ?: { associativity right precedence 100 }
+//X (BIOP_39) Ternary conditional: infix operator ?: TernaryPrecedence
 
 //MARK: -- Assignment
-//X (BIOP_40) Assign: infix operator = { associativity right precedence 90 }
+//X (BIOP_40) Assign: infix operator = AssignmentPrecedence
 //MARK: ---- (BIOP_41) Multiply and assign:
-infix operator *= : AssignmentPrecedence //{ associativity right precedence 90 }
+infix operator *= : AssignmentPrecedence
 func *= (lhs: inout BigInt, rhs: BigIntObjC) {
     return lhs.mul(rhs)
 }
@@ -400,10 +401,10 @@ func *= (lhs: inout BigInt, rhs: Int) {
 func *= (lhs: inout BigInt, rhs: UInt) {
     return lhs.mulULong(rhs)
 }
-//- (BIOP_42) Divide and assign: infix operator /= { associativity right precedence 90 }
-//- (BIOP_43) Remainder and assign: infix operator %= { associativity right precedence 90 }
+//- (BIOP_42) Divide and assign: infix operator /= AssignmentPrecedence
+//- (BIOP_43) Remainder and assign: infix operator %= AssignmentPrecedence
 //MARK: ---- (BIOP_44) Add and assign:
-infix operator += : AssignmentPrecedence //{ associativity right precedence 90 }
+infix operator += : AssignmentPrecedence
 func += (lhs: inout BigInt, rhs: BigIntObjC) {
     return lhs.add(rhs)
 }
@@ -414,18 +415,18 @@ func += (lhs: inout BigInt, rhs: UInt) {
     return lhs.addULong(rhs)
 }
 //MARK: ---- (BIOP_45) Substract and assign:
-infix operator -= : AssignmentPrecedence //{ associativity right precedence 90 }
+infix operator -= : AssignmentPrecedence
 func -= (lhs: inout BigInt, rhs: UInt) {
     return lhs.subULong(rhs)
 }
-//- (BIOP_46) Power and assign: infix operator **= { associativity right precedence 90 }
-//- (BIOP_47) Left bit shift and assign: infix operator <<= { associativity right precedence 90 }
-//- (BIOP_48) Right bit shift and assign: infix operator >>= { associativity right precedence 90 }
-//- (BIOP_49) Bitwise AND and assign: infix operator &= { associativity right precedence 90 }
-//- (BIOP_50) Bitwise XOR and assign: infix operator ^= { associativity right precedence 90 }
-//- (BIOP_51) Bitwise OR and assign: infix operator |= { associativity right precedence 90 }
-//- (BIOP_52) Logical AND and assign: infix operator &&= { associativity right precedence 90 }
-//- (BIOP_53) Logical OR and assign: infix operator ||= { associativity right precedence 90 }
+//- (BIOP_46) Power and assign: infix operator **= AssignmentPrecedence
+//- (BIOP_47) Left bit shift and assign: infix operator <<= AssignmentPrecedence
+//- (BIOP_48) Right bit shift and assign: infix operator >>= AssignmentPrecedence
+//- (BIOP_49) Bitwise AND and assign: infix operator &= AssignmentPrecedence
+//- (BIOP_50) Bitwise XOR and assign: infix operator ^= AssignmentPrecedence
+//- (BIOP_51) Bitwise OR and assign: infix operator |= AssignmentPrecedence
+//- (BIOP_52) Logical AND and assign: infix operator &&= AssignmentPrecedence
+//- (BIOP_53) Logical OR and assign: infix operator ||= AssignmentPrecedence
 
 
 //MARK: - Postfix operators
