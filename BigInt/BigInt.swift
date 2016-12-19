@@ -152,7 +152,7 @@ open class BigInt : BigIntObjC {
 //MARK: - Infix operators
 //MARK: -- Exponentiative
 //MARK: ---- (BIOP_07) Power:
-infix operator ** { associativity left precedence 160 }
+infix operator ** : BitwiseShiftPrecedence
 func ** (lhs: BigInt, rhs: UInt) -> BigInt {
     return BigInt(nr: BigIntObjC.power(lhs, exp: rhs))
 }
@@ -161,7 +161,7 @@ func ** (lhs: BigInt, rhs: UInt) -> BigInt {
 
 //MARK: -- Multiplicative
 //MARK: ---- (BIOP_10) Multiply:
-infix operator * { associativity left precedence 150 }
+infix operator * : MultiplicationPrecedence//{ associativity left precedence 150 }
 func * (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mul(lhs, op2: rhs))
 }
@@ -178,7 +178,7 @@ func * (lhs: UInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mulULong(rhs, op2: lhs))
 }
 //MARK: ==-- (BIOP_11) Divide:
-infix operator / { associativity left precedence 150 }
+infix operator / : MultiplicationPrecedence //{ associativity left precedence 150 }
 func / (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.div(lhs, d: rhs))
 }
@@ -195,7 +195,7 @@ func / (lhs: UInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.div(BigInt(uintNr: lhs), d: rhs))
 }
 //MARK: ==-- (BIOP_12) Remainder:
-infix operator % { associativity left precedence 150 }
+infix operator % : MultiplicationPrecedence //{ associativity left precedence 150 }
 func % (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.mod(lhs, d: rhs))
 }
@@ -218,7 +218,7 @@ func % (lhs: UInt, rhs: BigInt) -> BigInt {
 
 //MARK: -- Additive
 //MARK: ---- (BIOP_17) Add:
-infix operator + { associativity left precedence 140 }
+infix operator + : AdditionPrecedence //{ associativity left precedence 140 }
 func + (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.add(lhs, op2: rhs))
 }
@@ -235,7 +235,7 @@ func + (lhs: UInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.addULong(rhs, op2: lhs))
 }
 //MARK: ---- (BIOP_18) Substract:
-infix operator - { associativity left precedence 140 }
+infix operator - : AdditionPrecedence // { associativity left precedence 140 }
 func - (lhs: BigInt, rhs: BigInt) -> BigInt {
     return BigInt(nr: BigIntObjC.sub(lhs, op2: rhs))
 }
@@ -270,7 +270,7 @@ func - (lhs: UInt, rhs: BigInt) -> BigInt {
 
 //MARK: -- Comparative
 //MARK: ---- (BIOP_27) Less than:
-infix operator < { associativity none precedence 130 }
+infix operator < : ComparisonPrecedence //{ associativity none precedence 130 }
 func < (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) < 0
 }
@@ -287,7 +287,7 @@ func < (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) > 0
 }
 //MARK: ---- (BIOP_28) Less than or equal:
-infix operator <= { associativity none precedence 130 }
+infix operator <= : ComparisonPrecedence //{ associativity none precedence 130 }
 func <= (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) <= 0
 }
@@ -304,7 +304,7 @@ func <= (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) > 0
 }
 //MARK: ---- (BIOP_29) Greater than:
-infix operator > { associativity none precedence 130 }
+infix operator > : ComparisonPrecedence //{ associativity none precedence 130 }
 func > (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) > 0
 }
@@ -321,7 +321,7 @@ func > (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) < 0
 }
 //MARK: ---- (BIOP_30) Greater than or equal:
-infix operator >= { associativity none precedence 130 }
+infix operator >= : ComparisonPrecedence //{ associativity none precedence 130 }
 func >= (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) >= 0
 }
@@ -338,7 +338,7 @@ func >= (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) < 0
 }
 //MARK: ---- (BIOP_31) Equal:
-infix operator == { associativity none precedence 130 }
+infix operator == : ComparisonPrecedence //{ associativity none precedence 130 }
 func == (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) == 0
 }
@@ -355,7 +355,7 @@ func == (lhs: UInt, rhs: BigInt) -> Bool {
     return rhs.compare(withULong: lhs) == 0
 }
 //MARK: ---- (BIOP_32) Not equal:
-infix operator != { associativity none precedence 130 }
+infix operator != : ComparisonPrecedence //{ associativity none precedence 130 }
 func != (lhs: BigInt, rhs: BigInt) -> Bool {
     return lhs.compare(rhs) != 0
 }
@@ -390,7 +390,7 @@ func != (lhs: UInt, rhs: BigInt) -> Bool {
 //MARK: -- Assignment
 //X (BIOP_40) Assign: infix operator = { associativity right precedence 90 }
 //MARK: ---- (BIOP_41) Multiply and assign:
-infix operator *= { associativity right precedence 90 }
+infix operator *= : AssignmentPrecedence //{ associativity right precedence 90 }
 func *= (lhs: inout BigInt, rhs: BigIntObjC) {
     return lhs.mul(rhs)
 }
@@ -403,7 +403,7 @@ func *= (lhs: inout BigInt, rhs: UInt) {
 //- (BIOP_42) Divide and assign: infix operator /= { associativity right precedence 90 }
 //- (BIOP_43) Remainder and assign: infix operator %= { associativity right precedence 90 }
 //MARK: ---- (BIOP_44) Add and assign:
-infix operator += { associativity right precedence 90 }
+infix operator += : AssignmentPrecedence //{ associativity right precedence 90 }
 func += (lhs: inout BigInt, rhs: BigIntObjC) {
     return lhs.add(rhs)
 }
@@ -414,7 +414,7 @@ func += (lhs: inout BigInt, rhs: UInt) {
     return lhs.addULong(rhs)
 }
 //MARK: ---- (BIOP_45) Substract and assign:
-infix operator -= { associativity right precedence 90 }
+infix operator -= : AssignmentPrecedence //{ associativity right precedence 90 }
 func -= (lhs: inout BigInt, rhs: UInt) {
     return lhs.subULong(rhs)
 }
