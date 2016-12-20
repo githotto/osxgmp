@@ -1,9 +1,0 @@
-* The included GMP documentation (gmp-man-6.0.0a.pdf) falls under the terms of
-the 'GNU Free Documentation License'.
-
-* The GNU MP library is dual licensed under the conditions of the GNU Lesser General
-Public License version 3, or the GNU General Public License version 2. More on this on page 1
-of the gmp-man-6.0.0a.pdf document.
-
-* All the Objective-C and Swift code files are licensed under the terms of the
-GNU General Public License version 3 (see COPYINGv3), or any later version.

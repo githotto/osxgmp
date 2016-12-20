@@ -23,8 +23,9 @@ along with OSXGMP.  If not, see <http://www.gnu.org/licenses/>.
 //
 
 import Foundation
+import SwiftGMPFrameworkMac
 
-print("Hello (Swift2.0/Xcode7), OSXGMP / BigInt World!\n")
+print("Hello (Swift3.0/Xcode8.2), OSXGMP / BigInt World!\n")
 
 var bi1 = BigInt(intNr: 12468642135797531)
 do {
